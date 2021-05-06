@@ -19,8 +19,12 @@ Route::get('/', function () {
 //
 //Auth::routes();
 //
-Route::get('/admin', 'Admin\HomeController@admin')->name('admin');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/blog','HomeController@indexBlog');
+Route::group(['prefix' => 'admin','namespace'=>'Admin'], function() {
+    Route::get('/','HomeController@admin');
+    Route::get('/tags','TagsController@index')->name('tagsList');
+    Route::get('/tags/delete/{id}','TagsController@delete');
+});
 
 Route::get('/redirect','HomeController@redirect')->name('redir');
