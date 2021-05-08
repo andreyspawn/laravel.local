@@ -23,8 +23,10 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin','namespace'=>'Admin'], function() {
     Route::get('/','HomeController@admin');
-    Route::get('/tags','TagsController@index')->name('tagsList');
-    Route::get('/tags/delete/{id}','TagsController@delete');
+    Route::get('/tags','TagsController@index')->name('tag.list');
+    Route::get('/tags/delete/{id}','TagsController@delete')->name('tag.delete');
+    Route::get('/tags/create','TagsController@createForm');
+    Route::post('/tags/store','TagsController@store')->name('tag.store');
 });
 
 Route::get('/redirect','HomeController@redirect')->name('redir');

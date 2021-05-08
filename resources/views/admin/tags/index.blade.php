@@ -22,12 +22,12 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Список тэгов</h3>
+                <h3 class="box-title">Список тегов</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="form-group">
-                    <a href="create.html" class="btn btn-success">Добавить</a>
+                    <a href="tags/create" class="btn btn-success">Добавить</a>
                 </div>
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -43,7 +43,7 @@
                         <td>{{ $tag->id }}</td>
                         <td>{{ $tag->tag }}
                         </td>
-                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="{{ URL::asset('admin/tags/delete/') }}/{{ $tag->id }}" class="fa fa-remove"></a></td>
+                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="{{ route ('tag.delete',$tag->id) }}" class="fa fa-remove"></a></td>
                     </tr>
                     @endforeach
                     </tfoot>

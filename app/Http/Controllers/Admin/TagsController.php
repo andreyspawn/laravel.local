@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Tags;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class TagsController extends Controller
 {
@@ -19,6 +18,21 @@ class TagsController extends Controller
 
     public function delete($id) {
         Tags::destroy($id);
-        return redirect()->route('tagsList');
+        return redirect()->route('tag.list');
+    }
+
+    public function createForm() {
+
+        return view('admin/tags/create');
+
+    }
+
+    public function store(Request $request) {
+
+        $tag = new Tags();
+        $tag->tag = $request->get('tag');
+        $tag->updated_at = date(now());
+        $tag->save();
+        return redirect()->route('tag.list');
     }
 }
