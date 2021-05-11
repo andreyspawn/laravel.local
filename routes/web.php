@@ -1,5 +1,7 @@
 <?php
 
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,12 +23,15 @@ Route::get('/', function () {
 //
 //Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('admin/tag/delete/{id}','Admin\TagsController@destroy')->name('tag.destroy');
+Route::get('admin/category/delete/{id}','Admin\CategoriesController@destroy')->name('category.destroy');
+
 Route::group(['prefix' => 'admin','namespace'=>'Admin'], function() {
-    Route::get('/','HomeController@admin');
-    Route::get('/tags','TagsController@index')->name('tag.list');
-    Route::get('/tags/delete/{id}','TagsController@delete')->name('tag.delete');
-    Route::get('/tags/create','TagsController@createForm');
-    Route::post('/tags/store','TagsController@store')->name('tag.store');
+    Route::get('/','HomeController@index')->name('admin.index');
+    Route::resource('category','CategoriesController',['only'=> ['index','create','store']]);
+    Route::resource('tag','TagsController',['only'=> ['index','create','store']]);
 });
+
+
 
 Route::get('/redirect','HomeController@redirect')->name('redir');

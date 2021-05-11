@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //
-    public function admin()
+    public function index()
     {
         return view('admin/about');
     }
