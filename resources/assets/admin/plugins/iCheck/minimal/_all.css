@@ -125,8 +125,8 @@
 /* blue */
 .icheckbox_minimal-blue,
 .iradio_minimal-blue {
-    display: inline-block;
-    *display: inline;
+    /*display: inline-block;*/
+    /*display: inline;*/
     vertical-align: middle;
     margin: 0;
     padding: 0;
