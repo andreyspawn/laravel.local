@@ -51,7 +51,7 @@
                         <td>Обучение</td>
                         <td>Laravel, PHP</td>
                         <td>
-                            <img src="../images/user6-128x128.jpg" alt="" width="100">
+                            <img src="{{ URL::asset('/images/author.png') }}" alt="" width="100">
                         </td>
                         <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
                     </tr>
@@ -62,7 +62,7 @@
                         <td>Работа</td>
                         <td>Фриланс, Upwork</td>
                         <td>
-                            <img src="../images/user1-128x128.jpg" alt="" width="100">
+                            <img src="{{ URL::asset('/images/user1-128x128.jpg') }}" alt="" width="100">
                         </td>
                         <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
                     </tr>
