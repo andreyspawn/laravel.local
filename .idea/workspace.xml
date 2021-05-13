@@ -19,51 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="11-05-2021 - начал разбираться с шаблоном категорий">
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/abc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/author.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/blog-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/blog-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/blog-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/blog-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/blog-grid.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/blog-next.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/coming-soon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/comment-img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/comment.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/footer-img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/footer-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/header-3-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/header-logo-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/ins-flow.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/me-cover.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/p1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/p2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/p3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/r-p.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/related-post-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/related-post-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/front/images/related-post-3.jpg" afterDir="false" />
+    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="Переделка на ресурсную маршрутизацию 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/admin/dist/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/admin/dist/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620776595062</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Переделка на ресурсную маршрутизацию 1">
+      <created>1620895714387</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620895714387</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +267,8 @@
     <MESSAGE value="04-05-2021 - начало сбора шаблона и менюшек" />
     <MESSAGE value="Сделан КРУД для тегов 80%" />
     <MESSAGE value="11-05-2021 - начал разбираться с шаблоном категорий" />
-    <option name="LAST_COMMIT_MESSAGE" value="11-05-2021 - начал разбираться с шаблоном категорий" />
+    <MESSAGE value="Переделка на ресурсную маршрутизацию 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделка на ресурсную маршрутизацию 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1620761808087">
@@ -328,11 +295,11 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1620754707544" />
-    <state x="333" y="156" key="Vcs.Push.Dialog.v2" timestamp="1620894790284">
+    <state x="333" y="156" key="Vcs.Push.Dialog.v2" timestamp="1620895040414">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1620456541574" />
-    <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620894790284" />
+    <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620895040414" />
     <state x="427" y="29" width="585" height="801" key="find.popup" timestamp="1620761884534">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

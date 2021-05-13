@@ -1,6 +1,8 @@
 @extends('admin.admin_layout')
 
-
+@php
+    dd($posts);
+@endphp
 @section('content')
 <!-- =============================================== -->
 
