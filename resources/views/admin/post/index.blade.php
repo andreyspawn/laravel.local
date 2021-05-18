@@ -1,8 +1,8 @@
 @extends('admin.admin_layout')
 
-@php
-    dd($posts);
-@endphp
+{{--@php--}}
+{{--    dd($posts);--}}
+{{--@endphp--}}
 @section('content')
 <!-- =============================================== -->
 
@@ -46,10 +46,10 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($posts as $post)
                     <tr>
-                        <td>1</td>
-                        <td>Как изучить Laravel на основе Блога?
-                        </td>
+                        <td>{{$post->id}}</td>
+                        <td>{{$post->title}}</td>
                         <td>Обучение</td>
                         <td>Laravel, PHP</td>
                         <td>
@@ -57,6 +57,7 @@
                         </td>
                         <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
                     </tr>
+                    @endforeach
                     <tr>
                         <td>2</td>
                         <td>Работа на фрилансе

@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="Переделка на ресурсную маршрутизацию 1">
+    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="Промежуточный коммит">
+      <change afterPath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/TagsSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_29_115603_create_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_29_115603_create_posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620895714387</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Промежуточный коммит">
+      <created>1620916767887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620916767887</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +277,8 @@
     <MESSAGE value="Сделан КРУД для тегов 80%" />
     <MESSAGE value="11-05-2021 - начал разбираться с шаблоном категорий" />
     <MESSAGE value="Переделка на ресурсную маршрутизацию 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переделка на ресурсную маршрутизацию 1" />
+    <MESSAGE value="Промежуточный коммит" />
+    <option name="LAST_COMMIT_MESSAGE" value="Промежуточный коммит" />
   </component>
   <component name="WindowStateProjectService">
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1620761808087">
@@ -295,11 +305,16 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1620754707544" />
-    <state x="333" y="156" key="Vcs.Push.Dialog.v2" timestamp="1620895040414">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="416" y="197" key="Vcs.Push.Dialog.v2" timestamp="1620916780978">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1620456541574" />
     <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620895040414" />
+    <state x="416" y="197" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620916780978" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620970368593">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620970368593" />
     <state x="427" y="29" width="585" height="801" key="find.popup" timestamp="1620761884534">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
