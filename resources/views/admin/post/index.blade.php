@@ -50,7 +50,7 @@
                     <tr>
                         <td>{{$post->id}}</td>
                         <td>{{$post->title}}</td>
-                        <td>Обучение</td>
+                        <td>{{$post->category->title}}</td>
                         <td>Laravel, PHP</td>
                         <td>
                             <img src="{{ URL::asset('/images/author.png') }}" alt="" width="100">
