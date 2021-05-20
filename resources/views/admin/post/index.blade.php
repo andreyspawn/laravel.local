@@ -46,18 +46,21 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($posts as $post)
-                    <tr>
-                        <td>{{$post->id}}</td>
-                        <td>{{$post->title}}</td>
-                        <td>{{$post->category->title}}</td>
-                        <td>Laravel, PHP</td>
-                        <td>
-                            <img src="{{ URL::asset('/images/author.png') }}" alt="" width="100">
-                        </td>
-                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
-                    </tr>
+                    @foreach($categories as $category)
+                        dump($category->post->
                     @endforeach
+{{--                    @foreach($posts as $post)--}}
+{{--                    <tr>--}}
+{{--                        <td>{{$post->id}}</td>--}}
+{{--                        <td>{{$post->title}}</td>--}}
+{{--                        <td>{{$post->category->title}}</td>--}}
+{{--                        <td>Laravel, PHP</td>--}}
+{{--                        <td>--}}
+{{--                            <img src="{{ URL::asset('/images/author.png') }}" alt="" width="100">--}}
+{{--                        </td>--}}
+{{--                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>--}}
+{{--                    </tr>--}}
+{{--                    @endforeach--}}
                     <tr>
                         <td>2</td>
                         <td>Работа на фрилансе
