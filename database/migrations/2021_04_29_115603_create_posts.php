@@ -15,6 +15,7 @@ class CreatePosts extends Migration
      */
     public function up()
     {
+        //здесь пересоздам мои сущности!!!!
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title',100);
