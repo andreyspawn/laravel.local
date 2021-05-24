@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class TagsSeeder extends Seeder
 {
@@ -12,9 +13,11 @@ class TagsSeeder extends Seeder
     public function run()
     {
         //
+        $faker =Faker::create('ru_RU');
         for ($i = 1; $i <= 10; $i++) {
             DB::table('tags')->insert([
-                'tag' => rand(1, 10) . 'TagName ' . Str::random(6)
+                'tag'=>$faker->word()
+                //'tag' => rand(1, 10) . 'TagName ' . Str::random(6)
 
             ]);
         }

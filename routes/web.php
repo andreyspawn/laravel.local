@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin'], function() {
     Route::resource('category','CategoriesController',['only'=> ['index','create','store']]);
     Route::resource('tag','TagsController',['only'=> ['index','create','store']]);
     Route::resource('post','PostsController',['only'=> ['index','create','store']]);
+    Route::resource('employee','EmployeesController',['only'=> ['index','create','store']]);
 });
 
 
