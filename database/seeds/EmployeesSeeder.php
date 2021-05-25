@@ -16,15 +16,23 @@ class EmployeesSeeder extends Seeder
         //
         $faker=Faker::create('ru_RU');
         for ($i = 1; $i <= 100; $i++) {
-            DB::table('employees')->insert([
-                'last_name' => $faker->lastName('male'),
-                'name' => $faker->firstNameMale(),
-                'fathers_name' => $faker->middleNameMale(),
-                'date_in' => $faker->date('Y-m-d'),
-                'email' => $faker->email
-                //'tag' => rand(1, 10) . 'TagName ' . Str::random(6)
+            switch (rand(0,1)) {
+                case 0:
+                    DB::table('employees')->insert(['last_name' => $faker->lastName('female'),
+                    'name' => $faker->firstNameFemale(),
+                    'fathers_name' => $faker->middleNameFemale(),
+                    'date_in' => $faker->date('Y-m-d'),
+                    'email' => $faker->email//'tag' => rand(1, 10) . 'TagName ' . Str::random(6)
+                        ]);
+                case 1:
+                    DB::table('employees')->insert(['last_name' => $faker->lastName('male'),
+                        'name' => $faker->firstNameMale(),
+                        'fathers_name' => $faker->middleNameMale(),
+                        'date_in' => $faker->date('Y-m-d'),
+                        'email' => $faker->email//'tag' => rand(1, 10) . 'TagName ' . Str::random(6)
+                    ]);
 
-            ]);
+            }
         }
     }
 }

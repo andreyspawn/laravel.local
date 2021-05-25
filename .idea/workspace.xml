@@ -16,38 +16,28 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/13-04-21-firstLessonMiniBlogLaravel" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="11-05-2021 - добавил контроллер категорий">
-      <change afterPath="$PROJECT_DIR$/app/Employee.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmployeesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/EmployeesSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel.local.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel.local.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="Долепил связь один ко многим между постами и категориями">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_25_095356_create_departments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_25_095412_create_positions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/department/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/employee/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/position/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/position/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_29_115603_create_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_29_115603_create_posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TagsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TagsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/EmployeesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/EmployeesSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +192,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\OpenServer\domains\laravel.local\resources\views\admin\employee" />
+      <recent name="C:\OpenServer\domains\laravel.local\resources\views\admin\employee" />
+      <recent name="C:\OpenServer\domains\laravel.local\resources\views\admin\position" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OpenServer\domains\laravel.local\app\Http\Controllers\Admin" />
@@ -233,8 +224,6 @@
       <workItem from="1620144553761" duration="4974000" />
       <workItem from="1620318807462" duration="12015000" />
       <workItem from="1620749893650" duration="25547000" />
-      <workItem from="1621670499474" duration="2961000" />
-      <workItem from="1621885939455" duration="6858000" />
     </task>
     <task id="LOCAL-00001" summary="04-05-2021 - начало сбора шаблона и менюшек">
       <created>1620150556596</created>
@@ -271,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620916767887</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Сделал чуть чуть сидов">
+      <created>1621336331254</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621336331254</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Долепил связь один ко многим между постами и категориями">
+      <created>1621434307478</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621434307478</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,13 +310,19 @@
     <MESSAGE value="11-05-2021 - начал разбираться с шаблоном категорий" />
     <MESSAGE value="Переделка на ресурсную маршрутизацию 1" />
     <MESSAGE value="Промежуточный коммит" />
-    <option name="LAST_COMMIT_MESSAGE" value="Промежуточный коммит" />
+    <MESSAGE value="Сделал чуть чуть сидов" />
+    <MESSAGE value="Долепил связь один ко многим между постами и категориями" />
+    <option name="LAST_COMMIT_MESSAGE" value="Долепил связь один ко многим между постами и категориями" />
   </component>
   <component name="WindowStateProjectService">
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1620761808087">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1440.860@0.0.1440.860" timestamp="1620761808087" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621943498658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621943498658" />
     <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1619725599020">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -334,12 +343,12 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1620754707544" />
-    <state x="416" y="197" key="Vcs.Push.Dialog.v2" timestamp="1620916780978">
+    <state x="416" y="197" key="Vcs.Push.Dialog.v2" timestamp="1621434576071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1620456541574" />
     <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620895040414" />
-    <state x="416" y="197" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620916780978" />
+    <state x="416" y="197" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1621434576071" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620970368593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -348,9 +357,5 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="427" y="29" width="585" height="801" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1620761884534" />
-    <state x="376" y="195" key="run.anything.popup" timestamp="1621887213275">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1621887213275" />
   </component>
 </project>

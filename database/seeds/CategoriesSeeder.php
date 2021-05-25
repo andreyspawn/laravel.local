@@ -18,5 +18,12 @@ class CategoriesSeeder extends Seeder
 
             ]);
         }
+
+//        $generator = \Faker\Factory::create();
+//        $populator = new \Faker\ORM\Propel\Populator($generator);
+//        $populator->addEntity('Author', 5);
+//        $populator->addEntity('Book', 10);
+//        $populator->execute();
+
     }
 }

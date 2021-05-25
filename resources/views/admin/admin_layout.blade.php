@@ -214,7 +214,7 @@
                     </a>
                 </li>
                 <li><a href="{{ route('employee.index') }}"><i class="fa fa-sticky-note-o"></i> <span>Сотрудники</span></a></li>
-                <li><a href="{{ route('category.index') }}"><i class="fa fa-list-ul"></i> <span>Категории</span></a></li>
+                <li><a href="{{ route('department.index') }}"><i class="fa fa-list-ul"></i> <span>Подразделения</span></a></li>
                 <li><a href="{{ route('tag.index') }}"><i class="fa fa-tags"></i> <span>Теги</span></a></li>
                 <li>
                     <a href="#">

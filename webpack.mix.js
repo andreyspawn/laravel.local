@@ -36,7 +36,7 @@ mix.scripts([
     'resources/assets/admin/plugins/iCheck/icheck.min.js',
     'resources/assets/admin/dist/js/app.min.js',
     'resources/assets/admin/dist/js/demo.js',
-    'resources/assets/admin/dist/js/script.js',
+
 ],'public/js/admin.js')
 
 

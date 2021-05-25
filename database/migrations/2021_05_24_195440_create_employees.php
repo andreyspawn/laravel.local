@@ -24,7 +24,7 @@ class CreateEmployees extends Migration
             $table->string('email',50);
             $table->string('photo')->nullable();
 //            $table->integer('id_position');
-//            $table->integer('id_department');
+            $table->integer('id_department')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
