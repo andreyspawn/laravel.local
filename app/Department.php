@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\Schema;
 class Department extends Model
 {
     //
-    static public function getHierarchy($n) {
+    public function getChild($level) {
 
-        return $n*self::getHierarchy($n-1);
+        $departments = self::
+        return $departments;
+
+
 //        $maxLevel = self::max('parent_id');
 //        $name = self::where('id','=',1)->pluck('department_name');
 //        dd($name[0]);
@@ -24,4 +27,5 @@ class Department extends Model
 //            $departments[$i] = $this::where(\)
 //        }
     }
+
 }

@@ -11,8 +11,14 @@ class DepartmentsController extends Controller
     //
     public function index() {
         $departments = Department::all();
-        $maxLevel = Department::max('parent_id');
-        dd(Department::getHierarchy(4));
-        return view('admin.department.index',['departments'=>$departments,'maxLevel'=>$maxLevel]);
+        $maxLevel = $departments->max('parent_id'); //hierarchy level
+        $root =  $departments->first(); //root element in structure
+        $children = $departments->getChild(1);
+        dd($children);
+        return view('admin.department.index',['departments'=>$departments,'maxLevel'=>$maxLevel,'root'=>$root]);
+    }
+
+    public function getChild($level) {
+        $departments = Department::query()->
     }
 }
