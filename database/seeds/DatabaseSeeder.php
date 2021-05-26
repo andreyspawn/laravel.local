@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             PostsTableSeeder::class,
             TagsSeeder::class,
             EmployeesSeeder::class,
-            //DepartmentsSeeder::class
+            DepartmentsSeeder::class
         ]);
     }
 }

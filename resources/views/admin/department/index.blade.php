@@ -5,10 +5,9 @@
     <div class="content-wrapper" style="min-height: 901px">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                Привет! Это админка
-                <small>приятные слова..</small>
-            </h1>
+            <h2>
+                Структура подразделений
+            </h2>
         </section>
 
     <div class="container" data-aos="fade-up">
@@ -18,10 +17,18 @@
                 <div class="box box-solid box-primary">
                    <div class="box-header box-title">
 
-                       Feugiat pretium nibh ipsum consequat.
+                       <a href="#info1" data-toggle="collapse" >TEXT</a>
 
                    </div>
-                    <div class="box-body">
+                    <div id="info1" class="box-body collapse-show">
+                        <ul>
+                        @for($i = 2; $i <= $maxLevel; $i++)
+                            <li>
+
+                            </li>
+                        @endfor
+                        </ul>
+                        {{dd($departments)}}
                        Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
                     </div>
 
