@@ -13,10 +13,10 @@
             <div class="box box-solid box-primary">
                 <div class="box-header box-title">
 
-                    <a href="#info1" data-toggle="collapse" >{{$root->department_name}}</a>
+                    <a href="#info1" data-toggle="collapse" >Список подразделений</a>
 
                 </div>
-                <div id="info1" class="box-body collapse-show">
+                <div id="info1" class="box-body">
 
                     <table id="example1" class="table table-hover table-bordered">
                         <thead>
@@ -27,26 +27,47 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($departments as $department)
-                        <tr>
-                            <td>{{$department->id}}</td>
-                            <td>{{$department->department_name}}</td>
-                            <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
-                        </tr>
+                        @foreach ($children as $child)
+                            <tr class="success">
+                                <td>{{$child->id}}</td>
+                                <td><a href="#" > {{ $child->department_name }} </a></td>
+                                <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
+                            </tr>
+                            <tr>
+                                @foreach($child->childrenDepartments as $childDep)
+                                    @include('admin.department.childTable',['childDep'=>$childDep])
+                                @endforeach
+                            </tr>
                         @endforeach
+{{--                        @foreach($children as $child)--}}
+{{--                        <tr>--}}
+{{--                            <td>{{$child->id}}</td>--}}
+{{--                            <td><a href="#">{{$child->department_name}}</a></td>--}}
+{{--                            <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>--}}
+{{--                        </tr>--}}
+{{--                        @endforeach--}}
                         </tfoot>
                     </table>
 
-                    <ul>
-                        @for($i = 2; $i <= $maxLevel; $i++)
-                            <li>
+{{--                    <div class="box-body">--}}
+{{--                        <ul>--}}
+{{--                            <h1>TEST</h1>--}}
+{{--                            <h2>TEST</h2>--}}
+{{--                            <h3>TEST</h3>--}}
+{{--                            <h4>TEST</h4>--}}
+{{--                            <h5>TEST</h5>--}}
+{{--                            <h6>TEST</h6>--}}
+{{--                            @foreach ($children as $child)--}}
+{{--                                <li>{{ $child->id }}  {{ $child->department_name }}</li>--}}
 
-                            </li>
-                        @endfor
-                    </ul>
-                    <div class="box-body">
-                        The body of the box
-                    </div>
+{{--                                <ul>--}}
+{{--                                    @foreach ($child->childrenDepartments as $childDep)--}}
+{{--                                        @include('admin.department.child', ['childDep' => $childDep])--}}
+{{--                                    @endforeach--}}
+{{--                                </ul>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                     Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
                 </div>
 

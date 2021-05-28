@@ -18,10 +18,15 @@ class CreateDepartments extends Migration
             $table->id();
             $table->string('department_name',30)->nullable(false); //employee's surname
             $table->integer('position_id')->nullable(); // position's id of chief department
-            $table->integer('parent_id')->nullable(); // position's id of chief department
+            $table->unsignedBigInteger('parent_id')->nullable(); // position's id of chief department
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+
         });
+        Schema::table('departments', function (Blueprint $table) {
+            $table->foreign('parent_id')->references('id')->on('departments');
+        });
+
     }
 
     /**

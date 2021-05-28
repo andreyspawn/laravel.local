@@ -3,29 +3,44 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class Department extends Model
 {
-    //
-    public function getChild($level) {
-
-        $departments = self::
-        return $departments;
-
-
-//        $maxLevel = self::max('parent_id');
-//        $name = self::where('id','=',1)->pluck('department_name');
-//        dd($name[0]);
-//        $departments=[];
-//        for ($i=1; $i <= $maxLevel; $i++) {
-//            $departments[$i][]=self::where('parent_id','=',$i)->pluck('department_name')->toArray();
-//        }
-//        dd($departments);
-//        return $maxLevel;
-//        for ($i=1;$i <= $maxLevel;$i++) {
-//            $departments[$i] = $this::where(\)
-//        }
+    //return all children for determining level
+   static public function getChild($level) {
+       $departments = DB::select("SELECT id, department_name FROM departments where parent_id=?",[$level]);
+//       $departments = DB::select("with recursive cte (id, department_name, parent_id) as (
+//       select     id,
+//             department_name,
+//             parent_id
+//  from       departments
+//  where      parent_id = 1
+//  union all
+//  select     p.id,
+//             p.department_name,
+//             p.parent_id
+//  from       departments p
+//  inner join cte
+//          on p.parent_id = cte.id
+//)
+//select * from cte");
+       return $departments;
     }
 
+    //return all object of class for that level
+    public function departments() {
+       return $this->hasMany(Department::class,'parent_id');
+    }
+
+    //
+    public function childrenDepartments() {
+       return $this->hasMany(Department::class,'parent_id')->with('departments');
+    }
+
+
+
 }
+
+
