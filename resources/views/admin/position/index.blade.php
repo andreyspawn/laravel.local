@@ -34,44 +34,24 @@
                 <div class="form-group">
                     <a href="{{ route('post.create') }}" class="btn btn-success">Добавить</a>
                 </div>
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-hover">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Название</th>
-                        <th>Категория</th>
-                        <th>Теги</th>
-                        <th>Картинка</th>
+                        <th>Должность</th>
+                        <th>Зарплата</th>
                         <th>Действия</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($categories as $category)
-                        {{dump($category->post)}}
-                    @endforeach
-{{--                    @foreach($posts as $post)--}}
-{{--                    <tr>--}}
-{{--                        <td>{{$post->id}}</td>--}}
-{{--                        <td>{{$post->title}}</td>--}}
-{{--                        <td>{{$post->category->title}}</td>--}}
-{{--                        <td>Laravel, PHP</td>--}}
-{{--                        <td>--}}
-{{--                            <img src="{{ URL::asset('/images/author.png') }}" alt="" width="100">--}}
-{{--                        </td>--}}
-{{--                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>--}}
-{{--                    </tr>--}}
-{{--                    @endforeach--}}
+                    @foreach($positions as $position)
                     <tr>
-                        <td>2</td>
-                        <td>Работа на фрилансе
-                        </td>
-                        <td>Работа</td>
-                        <td>Фриланс, Upwork</td>
-                        <td>
-                            <img src="{{ URL::asset('/images/user1-128x128.jpg') }}" alt="" width="100">
-                        </td>
-                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
+                        <td class="col-lg-1">{{$position->id}}</td>
+                        <td>{{$position->position_name}}</td>
+                        <td class="col-lg-1">{{$position->salary}}</td>
+                        <td class="col-lg-1"><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
                     </tr>
+                    @endforeach
                     </tfoot>
                 </table>
             </div>

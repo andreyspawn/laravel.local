@@ -33,11 +33,11 @@
                                 <td><a href="#" > {{ $child->department_name }} </a></td>
                                 <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
                             </tr>
-                            <tr>
+
                                 @foreach($child->childrenDepartments as $childDep)
                                     @include('admin.department.childTable',['childDep'=>$childDep])
                                 @endforeach
-                            </tr>
+
                         @endforeach
 {{--                        @foreach($children as $child)--}}
 {{--                        <tr>--}}

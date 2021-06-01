@@ -26,6 +26,7 @@ Route::get('/', function () {
 Route::get('admin/tag/delete/{id}','Admin\TagsController@destroy')->name('tag.destroy');
 Route::get('admin/category/delete/{id}','Admin\CategoriesController@destroy')->name('category.destroy');
 Route::get('admin/post/delete/{id}','Admin\PostsController@destroy')->name('post.destroy');
+Route::get('admin/position/delete/{id}','Admin\PositionsController@destroy')->name('position.destroy');
 
 Route::group(['prefix' => 'admin','namespace'=>'Admin'], function() {
     Route::get('/','HomeController@index')->name('admin.index');
@@ -34,6 +35,7 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin'], function() {
     Route::resource('post','PostsController',['only'=> ['index','create','store']]);
     Route::resource('employee','EmployeesController',['only'=> ['index','create','store']]);
     Route::resource('department','DepartmentsController',['only'=> ['index','create','store']]);
+    Route::resource('position','PositionsController',['only'=> ['index','create','store']]);
 });
 
 

@@ -24,7 +24,8 @@ class DepartmentsController extends Controller
 //        }
 
 
-        return view('admin.department.index',['children'=>$children,'maxLevel'=>$maxLevel,'root'=>$root]);
+        //return view('admin.department.indexTable',['children'=>$children,'maxLevel'=>$maxLevel,'root'=>$root]);
+        return view('admin.department.indexList',['children'=>$children,'maxLevel'=>$maxLevel,'root'=>$root]);
     }
 
     public function getTree($maxlevel) {

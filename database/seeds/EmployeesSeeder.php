@@ -13,6 +13,7 @@ class EmployeesSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('ALTER TABLE employees AUTO_INCREMENT = 1;');
         //
         $faker=Faker::create('ru_RU');
         for ($i = 1; $i <= 100; $i++) {

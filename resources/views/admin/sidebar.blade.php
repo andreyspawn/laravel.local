@@ -6,8 +6,9 @@
             <i class="fa fa-dashboard"></i> <span>Админ-панель</span>
         </a>
     </li>
-    <li><a href="{{ route('employee.index') }}"><i class="fa fa-sticky-note-o"></i> <span>Сотрудники</span></a></li>
+    <li><a href="{{ route('employee.index') }}"><i class="fa fa-users"></i> <span>Сотрудники</span></a></li>
     <li><a href="{{ route('department.index') }}"><i class="fa fa-list-ul"></i> <span>Подразделения</span></a></li>
+    <li><a href="{{ route('position.index') }}"><i class="fa fa-tags"></i> <span>Должности</span></a></li>
     <li><a href="{{ route('tag.index') }}"><i class="fa fa-tags"></i> <span>Теги</span></a></li>
     <li>
         <a href="#">
@@ -23,3 +24,4 @@
 </ul>
 </section>
 <!-- /.sidebar -->
+{{--fa-sticky-note-o--}}

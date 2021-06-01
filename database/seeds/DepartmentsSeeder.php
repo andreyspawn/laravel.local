@@ -18,13 +18,13 @@ class DepartmentsSeeder extends Seeder
             'department_name'=>'Фирма основная',
         ]);
         //insert three sub-departments
-        for ($i = 2; $i <= 4; $i++) {
+        for ($i = 1; $i <= 4; $i++) {
             DB::table('departments')->insert([
                 'department_name'=>'Отдел №'.$i,
                 'parent_id'=>1
             ]);
         }
-        for ($i = 1; $i <= 6; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             DB::table('departments')->insert([
                 'department_name'=>'Группа №'.$i,
                 'parent_id'=>rand(2,4)
