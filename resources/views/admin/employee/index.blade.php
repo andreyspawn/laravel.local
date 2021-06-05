@@ -37,39 +37,43 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Название</th>
-                        <th>Категория</th>
-                        <th>Теги</th>
-                        <th>Картинка</th>
+                        <th>ID сотрудника</th>
+                        <th>Фото</th>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Подразделение</th>
+                        <th>Дата приема</th>
                         <th>Действия</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($categories as $category)
-                        {{dump($category->post)}}
-                    @endforeach
-{{--                    @foreach($posts as $post)--}}
-{{--                    <tr>--}}
-{{--                        <td>{{$post->id}}</td>--}}
-{{--                        <td>{{$post->title}}</td>--}}
-{{--                        <td>{{$post->category->title}}</td>--}}
-{{--                        <td>Laravel, PHP</td>--}}
+{{--                    @foreach($categories as $category)--}}
+{{--                        {{dump($category->post)}}--}}
+{{--                    @endforeach--}}
+                    @foreach($employees as $employee)
+                    <tr>
+                        <td>{{$employee->id}}</td>
+                        <td><img src="{{ URL::asset('/images/author.png') }}" alt="" width="100"></td>
+                        <td>{{$employee->last_name}} {{$employee->name}} {{$employee->fathers_name}}
+                        </td>
+                        <td>Position</td>
+                        <td>Department</td>
+                        <td>{{$employee->date_in}}</td>
 {{--                        <td>--}}
 {{--                            <img src="{{ URL::asset('/images/author.png') }}" alt="" width="100">--}}
 {{--                        </td>--}}
-{{--                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>--}}
-{{--                    </tr>--}}
-{{--                    @endforeach--}}
+                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
+                    </tr>
+                    @endforeach
                     <tr>
                         <td>2</td>
-                        <td>Работа на фрилансе
-                        </td>
+                        <td>Работа на фрилансе</td>
                         <td>Работа</td>
                         <td>Фриланс, Upwork</td>
                         <td>
                             <img src="{{ URL::asset('/images/user1-128x128.jpg') }}" alt="" width="100">
                         </td>
+                        <td>Фриланс, Upwork</td>
                         <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
                     </tr>
                     </tfoot>
