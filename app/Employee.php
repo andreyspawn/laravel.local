@@ -18,7 +18,7 @@ class Employee extends Model
 
     //single employee has ONE departments
     public function department() {
-        return $this->hasOne(Department::class,'chief_id');
+        return $this->hasOne(Department::class,'id','id_department');
     }
 
 

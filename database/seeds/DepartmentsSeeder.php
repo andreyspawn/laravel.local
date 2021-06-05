@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class DepartmentsSeeder extends Seeder
 {
@@ -12,6 +13,8 @@ class DepartmentsSeeder extends Seeder
      */
     public function run()
     {
+        $faker=Faker::create('ru_RU');
+
         //set ID to 1 because it's incremental field
         DB::statement('ALTER TABLE departments AUTO_INCREMENT = 1;');
         //Внесем корневую фирму
@@ -35,8 +38,12 @@ class DepartmentsSeeder extends Seeder
         //handle chief departments
         $count = DB::table('departments')->max('id');
         for ($i =1 ; $i<=$count;$i++) {
+            $emp_id = $faker->unique()->numberBetween(1,100);
             DB::table('departments')->where('id',$i)->update([
-                'chief_id'=>$i
+                'chief_id'=>$emp_id
+            ]);
+            DB::table('employees')->where('id',$emp_id)->update([
+                'id_department'=>$i
             ]);
         }
     }

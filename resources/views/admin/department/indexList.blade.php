@@ -20,7 +20,8 @@
                         <ul class="list-group">
                             <li class="list-group-item">
 
-                                <a href="#{{$child->id}}"> {{ $child->department_name }} </a>
+                                <a href="#{{$child->id}}"> {{ $child->department_name }}
+                                    (Руководитель: {{$child->chief->last_name}} {{$child->chief->name}}) </a>
 
                                 <a href="edit.html" class="fa fa-pencil"></a>
                                 <a href="#{{$child->id}}" class="fa fa-remove"></a>

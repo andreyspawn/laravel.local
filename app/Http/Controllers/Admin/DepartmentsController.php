@@ -15,10 +15,10 @@ class DepartmentsController extends Controller
         $dept = DB::table('departments');
         $maxLevel = $dept->distinct()->count('parent_id');
         $root = $dept ->first();
-        Employee::all()->find(1)->
+        //dd(Department::find(1)->chief->name);
 
         //$departments = Department::all();
-        dd($root);  //=  $departments->first(); //root element in structure
+        //dd($root);  //=  $departments->first(); //root element in structure
         //$children = Department::getChild(1);
         $children = Department::whereNull('parent_id')->with('childrenDepartments')->get();
 

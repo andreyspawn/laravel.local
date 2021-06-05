@@ -9,17 +9,17 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Blank page
-            <small>it all starts here</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Examples</a></li>
-            <li class="active">Blank page</li>
-        </ol>
-    </section>
+{{--    <section class="content-header">--}}
+{{--        <h1>--}}
+{{--            Blank page--}}
+{{--            <small>it all starts here</small>--}}
+{{--        </h1>--}}
+{{--        <ol class="breadcrumb">--}}
+{{--            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>--}}
+{{--            <li><a href="#">Examples</a></li>--}}
+{{--            <li class="active">Blank page</li>--}}
+{{--        </ol>--}}
+{{--    </section>--}}
 
     <!-- Main content -->
     <section class="content">
@@ -27,7 +27,7 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Листинг сущности</h3>
+                <h3 class="box-title">Список сотрудников</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -53,11 +53,12 @@
                     @foreach($employees as $employee)
                     <tr>
                         <td>{{$employee->id}}</td>
-                        <td><img src="{{ URL::asset('/images/author.png') }}" alt="" width="100"></td>
+                        <?php $num = '/images/user'.rand(1,8).'.jpg';?>
+                        <td><img src="{{ URL::asset($num) }}" alt="" width="70"></td>
                         <td>{{$employee->last_name}} {{$employee->name}} {{$employee->fathers_name}}
                         </td>
                         <td>Position</td>
-                        <td>Department</td>
+                        <td>{{$employee->department->department_name}}</td>
                         <td>{{$employee->date_in}}</td>
 {{--                        <td>--}}
 {{--                            <img src="{{ URL::asset('/images/author.png') }}" alt="" width="100">--}}
@@ -65,17 +66,7 @@
                         <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
                     </tr>
                     @endforeach
-                    <tr>
-                        <td>2</td>
-                        <td>Работа на фрилансе</td>
-                        <td>Работа</td>
-                        <td>Фриланс, Upwork</td>
-                        <td>
-                            <img src="{{ URL::asset('/images/user1-128x128.jpg') }}" alt="" width="100">
-                        </td>
-                        <td>Фриланс, Upwork</td>
-                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
-                    </tr>
+
                     </tfoot>
                 </table>
             </div>
