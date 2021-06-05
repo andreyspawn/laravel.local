@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Department;
+use App\Employee;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -14,10 +15,13 @@ class DepartmentsController extends Controller
         $dept = DB::table('departments');
         $maxLevel = $dept->distinct()->count('parent_id');
         $root = $dept ->first();
-        $departments = Department::all();
-        //dd($root);  //=  $departments->first(); //root element in structure
+        Employee::all()->find(1)->
+
+        //$departments = Department::all();
+        dd($root);  //=  $departments->first(); //root element in structure
         //$children = Department::getChild(1);
         $children = Department::whereNull('parent_id')->with('childrenDepartments')->get();
+
         //dd($children);
 //        foreach ($children as $child) {
 //            dd($child->childrenDepartments);

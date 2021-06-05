@@ -17,7 +17,7 @@ class CreateDepartments extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('department_name',30)->nullable(false); //employee's surname
-            $table->integer('position_id')->nullable(); // position's id of chief department
+            $table->integer('chief_id')->nullable(); // employee's id of chief department
             $table->unsignedBigInteger('parent_id')->nullable(); // position's id of chief department
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));

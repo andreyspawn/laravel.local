@@ -39,6 +39,10 @@ class Department extends Model
        return $this->hasMany(Department::class,'parent_id')->with('departments');
     }
 
+   public function chief() {
+       return $this->hasOne(Employee::class,'')
+   }
+
 
 
 }

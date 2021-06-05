@@ -16,5 +16,10 @@ class Employee extends Model
          'photo'
         ];
 
+    //single employee has ONE departments
+    public function department() {
+        return $this->hasOne(Department::class,'chief_id');
+    }
+
 
 }

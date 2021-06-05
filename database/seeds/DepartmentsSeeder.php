@@ -12,6 +12,7 @@ class DepartmentsSeeder extends Seeder
      */
     public function run()
     {
+        //set ID to 1 because it's incremental field
         DB::statement('ALTER TABLE departments AUTO_INCREMENT = 1;');
         //Внесем корневую фирму
         DB::table('departments')->insert([
@@ -28,6 +29,14 @@ class DepartmentsSeeder extends Seeder
             DB::table('departments')->insert([
                 'department_name'=>'Группа №'.$i,
                 'parent_id'=>rand(2,4)
+            ]);
+        }
+
+        //handle chief departments
+        $count = DB::table('departments')->max('id');
+        for ($i =1 ; $i<=$count;$i++) {
+            DB::table('departments')->where('id',$i)->update([
+                'chief_id'=>$i
             ]);
         }
     }

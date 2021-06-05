@@ -18,6 +18,7 @@ class CreatePositions extends Migration
             $table->id();
             $table->string('position_name',30)->nullable(false);
             $table->integer('salary')->nullable();
+            $table->integer('quantity')->default('1'); //pre-model staffing table
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
