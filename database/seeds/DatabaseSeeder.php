@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             EmployeesSeeder::class,
             DepartmentsSeeder::class,
             PositionsSeeder::class,
-            EmpForDepSeeder::class
+            EmpForDepSeeder::class,
+            EmpPosSeeder::class
         ]);
     }
 }

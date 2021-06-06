@@ -19,34 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="Поменял иерархический вывод подразделений Departments - сделал и в виде таблицы и в виде обычного списка&#10;&#10;Дополнил сидеры для должностей positions">
-      <change afterPath="$PROJECT_DIR$/database/seeds/EmpForDepSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user8.jpg" afterDir="false" />
+    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="base seed&#10;addition views department and employees">
+      <change afterPath="$PROJECT_DIR$/database/seeds/EmpPosSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Employee.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_25_095356_create_departments.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_25_095356_create_departments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DepartmentsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DepartmentsSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/EmployeesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/EmployeesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user1-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user2-160x160.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user3-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user4-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user5-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user6-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user7-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user8-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/department/child.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/department/child.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/department/indexList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/department/indexList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +216,8 @@
       <workItem from="1620318807462" duration="12015000" />
       <workItem from="1620749893650" duration="25547000" />
       <workItem from="1622528982220" duration="23459000" />
+      <workItem from="1622964011830" duration="367000" />
+      <workItem from="1622971078441" duration="6424000" />
     </task>
     <task id="LOCAL-00001" summary="04-05-2021 - начало сбора шаблона и менюшек">
       <created>1620150556596</created>
@@ -306,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622561415246</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="base seed&#10;addition views department and employees">
+      <created>1622930298396</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622930298396</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +337,8 @@
     <MESSAGE value="Начало работы над иерархическим запросом в Department" />
     <MESSAGE value="Сделал иерархический вывод подразделений Departments" />
     <MESSAGE value="Поменял иерархический вывод подразделений Departments - сделал и в виде таблицы и в виде обычного списка&#10;&#10;Дополнил сидеры для должностей positions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поменял иерархический вывод подразделений Departments - сделал и в виде таблицы и в виде обычного списка&#10;&#10;Дополнил сидеры для должностей positions" />
+    <MESSAGE value="base seed&#10;addition views department and employees" />
+    <option name="LAST_COMMIT_MESSAGE" value="base seed&#10;addition views department and employees" />
   </component>
   <component name="WindowStateProjectService">
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1620761808087">
@@ -379,9 +370,10 @@
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1620754707544" />
     <state x="739" y="427" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622203948454" />
-    <state x="416" y="197" key="Vcs.Push.Dialog.v2" timestamp="1622561423238">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="277" y="186" key="Vcs.Push.Dialog.v2" timestamp="1622930338306">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state x="277" y="186" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1622930338306" />
     <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1622054659072" />
     <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620895040414" />
     <state x="416" y="197" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622561423238" />

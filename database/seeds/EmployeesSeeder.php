@@ -23,6 +23,7 @@ class EmployeesSeeder extends Seeder
                     'name' => $faker->firstNameFemale(),
                     'fathers_name' => $faker->middleNameFemale(),
                     'date_in' => $faker->dateTimeBetween('-5 years'),
+                    'birthday'=>$faker->date(),
                     'email' => $faker->email
                         ]);
                 case 1:
@@ -30,6 +31,7 @@ class EmployeesSeeder extends Seeder
                         'name' => $faker->firstNameMale(),
                         'fathers_name' => $faker->middleNameMale(),
                         'date_in' => $faker->dateTimeBetween('-5 years'),
+                        'birthday'=>$faker->date(),
                         'email' => $faker->email
                     ]);
             }
