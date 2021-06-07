@@ -18,8 +18,8 @@ class EmpForDepSeeder extends Seeder
         $faker=Faker::create('ru_RU');
         $emps = Employee::all();
         foreach ($emps as $emp) {
-            if (is_null($emp->id_department)) {
-                $emp->id_department = $faker->numberBetween(6,15);
+            if (is_null($emp->department_id)) {
+                $emp->department_id = $faker->numberBetween(6,15);
                 $emp->save();
             }
         }

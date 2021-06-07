@@ -1,7 +1,7 @@
 <ul>
 <li class="list-group-item">
     <a href="#{{ $childDep->id }}">{{ $childDep->department_name }}
-        (Руководитель: {{$childDep->chief->last_name}} {{$childDep->chief->name}}) </a>
+        ({{$childDep->chief->position->position_name}}: {{$childDep->chief->last_name}} {{$childDep->chief->name}}) </a>
     <a href="edit.html" class="fa fa-pencil"></a> <a href="#{{ $childDep->id }}" class="fa fa-remove"></a>
 </li>
 @if ($childDep->childrenDepartments)

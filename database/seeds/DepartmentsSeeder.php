@@ -48,8 +48,8 @@ class DepartmentsSeeder extends Seeder
                 'chief_id'=>$emp_id
             ]);
             DB::table('employees')->where('id',$emp_id)->update([
-                'id_department'=>$i,
-                'id_position'=> $pos->position_id
+                'department_id'=>$i,
+                'position_id'=> $pos->position_id
             ]);
 
         }

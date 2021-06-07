@@ -17,8 +17,8 @@ class EmpPosSeeder extends Seeder
         //
         $emps = Employee::all();
         foreach ($emps as $emp) {
-            if (is_null($emp->id_position)) {
-                $emp->id_position = rand(6,8);
+            if (is_null($emp->position_id)) {
+                $emp->position_id = rand(6,8);
                 $emp->save();
             }
         }

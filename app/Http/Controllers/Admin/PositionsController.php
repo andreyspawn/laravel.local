@@ -13,4 +13,19 @@ class PositionsController extends Controller
         $positions = Position::all();
         return view('admin.position.index',['positions'=>$positions]);
     }
+
+    public function create() {
+        return view('admin.position.create');
+    }
+
+    public function store(Request $request) {
+
+        $position = new Position();
+        $position->position_name = $request->get('position_name');
+        $position->salary = $request->get('salary');
+        $position->save();
+        return redirect()->route('position.index');
+    }
+
+
 }
