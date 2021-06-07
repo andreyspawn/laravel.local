@@ -20,11 +20,12 @@ class CreateEmployees extends Migration
             $table->string('last_name',30)->nullable(false); //employee's surname
             $table->string('name',30)->nullable(false);//employee's name
             $table->string('fathers_name',30)->nullable(false);//
+            $table->date('birthday')->nullable();
             $table->date('date_in')->default(Carbon::now());
             $table->string('email',50);
             $table->string('photo')->nullable();
-//            $table->integer('id_position');
-            $table->integer('id_department')->nullable();
+            $table->integer('position_id')->nullable();
+            $table->integer('department_id')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });

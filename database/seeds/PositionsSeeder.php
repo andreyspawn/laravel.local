@@ -14,14 +14,15 @@ class PositionsSeeder extends Seeder
     {
         //
         DB::statement('ALTER TABLE positions AUTO_INCREMENT = 1;');
-        $positions_name = ['Директор' => 1000,
+        $positions_name = [
+            'Директор' => 1000,
             'Заместитель директора' => 700,
             'Бухгалтер' => 600,
             'Начальник отдела'=> 600,
             'Руководитель группы'=>500,
             'Дизайнер'=>400,
             'Разработчик'=>450,
-            'Тестировщик'=>400];
+            'Тестировщик'=>400,];
 
         foreach ($positions_name as $pos=>$salary) {
             $position = new Position();

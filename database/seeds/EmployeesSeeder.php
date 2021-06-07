@@ -22,17 +22,18 @@ class EmployeesSeeder extends Seeder
                     DB::table('employees')->insert(['last_name' => $faker->lastName('female'),
                     'name' => $faker->firstNameFemale(),
                     'fathers_name' => $faker->middleNameFemale(),
-                    'date_in' => $faker->date('Y-m-d'),
-                    'email' => $faker->email//'tag' => rand(1, 10) . 'TagName ' . Str::random(6)
+                    'date_in' => $faker->dateTimeBetween('-5 years'),
+                    'birthday'=>$faker->dateTimeBetween('-60 years', '-22 years'),
+                    'email' => $faker->email
                         ]);
                 case 1:
                     DB::table('employees')->insert(['last_name' => $faker->lastName('male'),
                         'name' => $faker->firstNameMale(),
                         'fathers_name' => $faker->middleNameMale(),
-                        'date_in' => $faker->date('Y-m-d'),
-                        'email' => $faker->email//'tag' => rand(1, 10) . 'TagName ' . Str::random(6)
+                        'date_in' => $faker->dateTimeBetween('-5 years'),
+                        'birthday'=>$faker->dateTimeBetween('-60 years', '-22 years'),
+                        'email' => $faker->email
                     ]);
-
             }
         }
     }

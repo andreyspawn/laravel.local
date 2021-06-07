@@ -8,38 +8,35 @@ use Illuminate\Support\Facades\Schema;
 
 class Department extends Model
 {
-    //return all children for determining level
-   static public function getChild($level) {
-       $departments = DB::select("SELECT id, department_name FROM departments where parent_id=?",[$level]);
-//       $departments = DB::select("with recursive cte (id, department_name, parent_id) as (
-//       select     id,
-//             department_name,
-//             parent_id
-//  from       departments
-//  where      parent_id = 1
-//  union all
-//  select     p.id,
-//             p.department_name,
-//             p.parent_id
-//  from       departments p
-//  inner join cte
-//          on p.parent_id = cte.id
-//)
-//select * from cte");
-       return $departments;
-    }
+    private $listLevel;
 
     //return all object of class for that level
     public function departments() {
        return $this->hasMany(Department::class,'parent_id');
     }
 
-    //
+    //return all object of class for that level and lower and lower through recursion link hasMany
     public function childrenDepartments() {
        return $this->hasMany(Department::class,'parent_id')->with('departments');
     }
 
+   //chief department
+   public function chief() {
+       return $this->hasOne(Employee::class,'id','chief_id');
+   }
 
+   public function getListLevel() {
+
+        $result = $this->department_name;
+        $id = $this->parent_id;
+
+        while ($id) {
+            $result = Department::all()->find($id)->department_name.' >> '.$result;
+            $id = Department::all()->find($id)->parent_id;
+        }
+
+        return $result;
+    }
 
 }
 

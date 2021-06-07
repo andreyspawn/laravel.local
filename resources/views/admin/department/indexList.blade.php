@@ -4,15 +4,10 @@
 @section('content')
     <div class="content-wrapper" style="min-height: 901px">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-
-        </section>
-
         <section class="content  col-lg-10">
-
-            <div class="box box-solid box-primary">
-                <div class="box-header box-title">
-                    Список подразделений
+            <div class="box box-solid box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Список подразделений</h3>
                 </div>
                 <div class="box-body">
 
@@ -20,7 +15,8 @@
                         <ul class="list-group">
                             <li class="list-group-item">
 
-                                <a href="#{{$child->id}}"> {{ $child->department_name }} </a>
+                                <a href="#{{$child->id}}"> {{ $child->department_name }}
+                                    ({{$child->chief->position->position_name}}: {{$child->chief->last_name}} {{$child->chief->name}}) </a>
 
                                 <a href="edit.html" class="fa fa-pencil"></a>
                                 <a href="#{{$child->id}}" class="fa fa-remove"></a>
