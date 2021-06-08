@@ -23,17 +23,17 @@
     <section class="content">
 
         <!-- Default box -->
-        <div class="box">
-            <div class="box-header">
+        <div class="box box-solid box-default"">
+            <div class="box-header with-border">
                 <h3 class="box-title">Список сотрудников</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="form-group">
-                    <a href="{{ route('post.create') }}" class="btn btn-success">Добавить</a>
+                    <a href="{{ route('employee.create') }}" class="btn btn-success">Добавить</a>
                 </div>
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
+                <table id="example1" class="table-hover table-bordered table-striped">
+                    <thead class="table-light">
                     <tr>
                         <th class="col-lg-1">ID сотрудника</th>
                         <th>Фото</th>
@@ -50,13 +50,13 @@
                     <tr>
                         <td>{{$employee->id}}</td>
                         <?php $num = '/images/user'.rand(1,8).'.jpg';?>
-                        <td><img src="{{ URL::asset($num) }}" alt="" width="70"></td>
+                        <td><img style="border-radius : 20% " src="{{ URL::asset($num) }}"  alt="" width="70"></td>
                         <td>{{$employee->last_name}} {{$employee->name}} {{$employee->fathers_name}}
                         </td>
                         <td>{{$employee->position->position_name}}</td>
                         <td>{{$employee->department->getlistLevel()}}</td>
                         <td>{{$employee->date_in}}</td>
-                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
+                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove"></a></td>
                     </tr>
                     @endforeach
 

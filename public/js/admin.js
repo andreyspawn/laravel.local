@@ -3077,7 +3077,11 @@ $(document).ready(function ()
     $(".select2").select2();
 
     //Date picker
-    $('#datepicker').datepicker({
+    $('#datepicker1').datepicker({
+        autoclose: true
+    });
+
+    $('#datepicker2').datepicker({
         autoclose: true
     });
 

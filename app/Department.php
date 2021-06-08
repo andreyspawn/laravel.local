@@ -26,17 +26,15 @@ class Department extends Model
    }
 
    public function getListLevel() {
-
         $result = $this->department_name;
         $id = $this->parent_id;
-
         while ($id) {
             $result = Department::all()->find($id)->department_name.' >> '.$result;
             $id = Department::all()->find($id)->parent_id;
         }
-
         return $result;
     }
+
 
 }
 
