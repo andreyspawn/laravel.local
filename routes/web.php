@@ -27,6 +27,7 @@ Route::get('admin/tag/delete/{id}','Admin\TagsController@destroy')->name('tag.de
 Route::get('admin/category/delete/{id}','Admin\CategoriesController@destroy')->name('category.destroy');
 Route::get('admin/post/delete/{id}','Admin\PostsController@destroy')->name('post.destroy');
 Route::get('admin/position/delete/{id}','Admin\PositionsController@destroy')->name('position.destroy');
+Route::get('admin/employee/delete/{id}','Admin\EmployeesController@delete')->name('employee.delete');
 
 Route::group(['prefix' => 'admin','namespace'=>'Admin'], function() {
     Route::get('/','HomeController@index')->name('admin.index');
