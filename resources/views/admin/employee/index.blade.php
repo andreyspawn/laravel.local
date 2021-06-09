@@ -49,10 +49,10 @@
                     @foreach($employees as $employee)
                     <tr>
                         <td>{{$employee->id}}</td>
-                        <?php $num = '/images/user'.rand(1,8).'.jpg';?>
-                        <td><img style="border-radius : 20% " src="{{ URL::asset($num) }}"  alt="" width="70"></td>
-                        <td>{{$employee->last_name}} {{$employee->name}} {{$employee->fathers_name}}
-                        </td>
+{{--<!--                        --><?php //$num = '/images/user'.rand(1,8).'.jpg';?>--}}
+                        <td><img class="empimage" src="{{$employee->photo}}" alt="" width="70"></td>
+{{--                        <td>{{dump(URL::asset($employee->photo))}}</td>--}}
+                        <td>{{$employee->last_name}} {{$employee->name}} {{$employee->fathers_name}}</td>
                         <td>{{$employee->position->position_name}}</td>
                         <td>{{$employee->department->getListLevel()}}</td>
                         <td>{{$employee->date_in}}</td>

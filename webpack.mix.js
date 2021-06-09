@@ -21,6 +21,7 @@ mix.styles([
     'resources/assets/admin/plugins/datatables/dataTables.bootstrap.css',
     'resources/assets/admin/dist/css/AdminLTE.min.css',
     'resources/assets/admin/dist/css/skins/_all-skins.min.css',
+    'resources/assets/admin/dist/css/my.css',
 
 ],'public/css/admin.css')
 
