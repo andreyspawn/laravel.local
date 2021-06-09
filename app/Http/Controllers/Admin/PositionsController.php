@@ -27,5 +27,10 @@ class PositionsController extends Controller
         return redirect()->route('position.index');
     }
 
+    public function  delete($id) {
+        Position::find($id)->delete();
+        return redirect()->route('position.index');
+    }
+
 
 }

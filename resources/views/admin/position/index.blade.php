@@ -47,7 +47,10 @@
                         <td class="col-lg-1">{{$position->id}}</td>
                         <td>{{$position->position_name}}</td>
                         <td class="col-lg-1">{{$position->salary}}</td>
-                        <td class="col-lg-1"><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
+                        <td class="col-lg-1">
+                            <a href="edit.html" class="fa fa-pencil"></a>
+                            <a href="{{route('position.delete',$position->id)}}" class="fa fa-remove"></a>
+                        </td>
                     </tr>
                     @endforeach
                     </tfoot>

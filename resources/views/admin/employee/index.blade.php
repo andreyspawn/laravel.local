@@ -54,7 +54,7 @@
                         <td>{{$employee->last_name}} {{$employee->name}} {{$employee->fathers_name}}
                         </td>
                         <td>{{$employee->position->position_name}}</td>
-                        <td>{{$employee->department->getlistLevel()}}</td>
+                        <td>{{$employee->department->getListLevel()}}</td>
                         <td>{{$employee->date_in}}</td>
                         <td><a href="edit.html" class="fa fa-pencil"></a> <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove"></a></td>
                     </tr>

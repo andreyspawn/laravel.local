@@ -18,6 +18,11 @@ class DepartmentsController extends Controller
         return view('admin.department.indexList',['children'=>$children]);
     }
 
+    public function delete($id) {
+        Department::find($id)->delete();
+        return redirect()->route('department.index');
+    }
+
 
 
 

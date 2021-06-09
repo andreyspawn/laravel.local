@@ -19,7 +19,7 @@
                                     ({{$child->chief->position->position_name}}: {{$child->chief->last_name}} {{$child->chief->name}}) </a>
 
                                 <a href="edit.html" class="fa fa-pencil"></a>
-                                <a href="#{{$child->id}}" class="fa fa-remove"></a>
+                                <a href="{{route('department.delete',$child->id)}}" class="fa fa-remove"></a>
 
 
                             </li>
