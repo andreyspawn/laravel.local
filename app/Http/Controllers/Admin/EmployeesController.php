@@ -60,7 +60,8 @@ class EmployeesController extends Controller
     }
 
     public function store(StoreEmployeeRequest $request) {
-        $this->validate($request->rules());
+        $validator = $request->validated;
+        dump($validator->errors());
         dd($request->all());
         return redirect()->route('employee.index');
     }

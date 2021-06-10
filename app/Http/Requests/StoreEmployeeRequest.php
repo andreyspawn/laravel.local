@@ -13,7 +13,7 @@ class StoreEmployeeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,8 +26,17 @@ class StoreEmployeeRequest extends FormRequest
         return [
             //
             'last_name' => 'required|max:15',
-            'name' => 'required',
-            'fathers_name' => 'required',
+            'name' => 'required|string',
+            'fathers_name' => 'required|string',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'last_name' => 'Необходимо указать фамилию',
+            'name'  => 'Необходимо указать имя',
+            'fathers_name' => 'Необходимо указать отчество'
         ];
     }
 }
