@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Employee;
 use App\Department;
+use App\Http\Requests\StoreEmployeeRequest;
 use App\Position;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -24,8 +25,9 @@ class EmployeesController extends Controller
         return view('admin.employee.create',['departments'=>$departments,'positions'=>$positions]);
     }
 
-    public function store(Request $request) {
-        dd($request);
+    public function store(StoreEmployeeRequest $request) {
+        $this->validate($request->rules());
+        dd($request->all());
         return redirect()->route('employee.index');
     }
 

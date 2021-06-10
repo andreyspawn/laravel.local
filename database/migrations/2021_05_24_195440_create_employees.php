@@ -27,6 +27,7 @@ class CreateEmployees extends Migration
             $table->integer('position_id')->nullable();
             $table->integer('department_id')->nullable();
             $table->text('note')->nullable();
+            $table->boolean('is_visual')->default(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });

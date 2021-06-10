@@ -19,30 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="made form for adding new employee&#10;&#10;working with form elements (list department, list position, files)">
-      <change afterPath="$PROJECT_DIR$/public/images/female_user3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/female_user4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/female_user5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/female_user7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/male_user1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/male_user2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/male_user6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/male_user8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/admin/dist/css/my.css" afterDir="false" />
+    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="css rebuild and rebuild path to photo employees">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/EmployeesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/EmployeesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmployeesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmployeesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/employee/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/employee/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623073715486</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="css rebuild and rebuild path to photo employees">
+      <created>1623247569380</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1623247569380</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +341,8 @@
     <MESSAGE value="Сделал иерархический вывод подразделений Departments" />
     <MESSAGE value="Поменял иерархический вывод подразделений Departments - сделал и в виде таблицы и в виде обычного списка&#10;&#10;Дополнил сидеры для должностей positions" />
     <MESSAGE value="work with Positions&#10;complete route index&#10;complete route create&#10;&#10;change others forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="work with Positions&#10;complete route index&#10;complete route create&#10;&#10;change others forms" />
+    <MESSAGE value="css rebuild and rebuild path to photo employees" />
+    <option name="LAST_COMMIT_MESSAGE" value="css rebuild and rebuild path to photo employees" />
   </component>
   <component name="WindowStateProjectService">
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1620761808087">
@@ -385,12 +374,12 @@
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1620754707544" />
     <state x="739" y="427" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622203948454" />
-    <state x="416" y="197" key="Vcs.Push.Dialog.v2" timestamp="1623073733766">
+    <state x="416" y="197" key="Vcs.Push.Dialog.v2" timestamp="1623247602636">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1622054659072" />
     <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620895040414" />
-    <state x="416" y="197" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623073733766" />
+    <state x="416" y="197" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623247602636" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622530253433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

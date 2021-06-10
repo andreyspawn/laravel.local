@@ -26,18 +26,18 @@
                     <div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="LastName">Фамилия</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName"
+                                <label for="last_name">Фамилия</label>
+                                <input type="text" class="form-control" id="lastName" name="last_name"
                                        placeholder="Иванов">
                             </div>
                             <div class="form-group">
-                                <label for="Name">Имя</label>
+                                <label for="name">Имя</label>
                                 <input type="text" class="form-control" id="Name" name="name"
                                        placeholder="Иван">
                             </div>
                             <div class="form-group">
-                                <label for="FathersName">Отчество</label>
-                                <input type="text" class="form-control" id="FathersName" name="fathersName"
+                                <label for="fathers_name">Отчество</label>
+                                <input type="text" class="form-control" id="FathersName" name="fathers_name"
                                        placeholder="Иванович">
                             </div>
                             <div class="form-group">
@@ -78,12 +78,12 @@
                             <label>Должность</label>
                             {{Form::select('position',$positions,null,['class'=>'form-control select2',
                                     'style'=>'width:100%', 'placeholder' => 'не выбрано'])}}
-{{--                            <select class="form-control select2" style="width: 100%;">--}}
-{{--                                <option selected="selected">не выбрано</option>--}}
-{{--                                @foreach($positions as $position)--}}
-{{--                                    <option>{{$position->position_name}}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
+                            {{--                            <select class="form-control select2" style="width: 100%;">--}}
+                            {{--                                <option selected="selected">не выбрано</option>--}}
+                            {{--                                @foreach($positions as $position)--}}
+                            {{--                                    <option>{{$position->position_name}}</option>--}}
+                            {{--                                @endforeach--}}
+                            {{--                            </select>--}}
                         </div>
 
                         <!-- For tags with multiple select -->
@@ -125,7 +125,7 @@
                         <!-- checkbox -->
                         <div class="form-group">
                             <label>
-                                <input type="checkbox">
+                                <input type="checkbox" name="check_is_visual">
                             </label>
                             <label>
                                 Показывать данные в карточке сотрудника
