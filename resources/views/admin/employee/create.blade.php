@@ -23,6 +23,9 @@
 
 
                 <div class="box-body">
+                    @if($errors->any())
+                        <?php dd($errors->last_name) ?>
+                    @endif
                     <div>
                         <div class="col-md-6">
                             <div class="form-group">

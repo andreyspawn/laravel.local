@@ -60,6 +60,11 @@ class EmployeesController extends Controller
     }
 
     public function store(StoreEmployeeRequest $request) {
+
+        dump($request);
+
+        dd($this->validate($request, $request->rules()));
+
         $validator = $request->validated;
         dump($validator->errors());
         dd($request->all());
