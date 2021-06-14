@@ -24,7 +24,15 @@
 
                 <div class="box-body">
                     @if($errors->any())
-                        <?php dd($errors->last_name) ?>
+                        <div class="alert alert-warning" ">
+                       <ui>
+                           @foreach($errors->all() as $error)
+                               <li>
+                                   {{$error}}
+                               </li>
+                           @endforeach
+                       </ui>
+                        </div>
                     @endif
                     <div>
                         <div class="col-md-6">
@@ -44,12 +52,19 @@
                                        placeholder="Иванович">
                             </div>
                             <div class="form-group">
+                                <label for="email">email</label>
+                                <input type="text" class="form-control" id="FathersName" name="email"
+                                       placeholder="email">
+                            </div>
+                            <div class="form-group">
                                 <label>Дата рождения:</label>
                                 <div class="input-group date">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" class="form-control pull-right" id="datepicker1" name="birthday">
+                                    <input type="text" class="form-control pull-right"
+                                           data-date-format="dd-mm-yyyy"
+                                           id="datepicker1" name="birthday">
                                 </div>
                             </div>
 
@@ -111,7 +126,10 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control pull-right" id="datepicker2" name="date_in">
+                                <input type="text" class="form-control pull-right"
+                                       data-date-format="dd-mm-yyyy"
+                                       value="{{date('d-m-Y')}}"
+                                       id="datepicker2" name="date_in">
                             </div>
                             <!-- /.input group -->
                         </div>

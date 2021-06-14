@@ -25,6 +25,10 @@ class Department extends Model
        return $this->hasOne(Employee::class,'id','chief_id');
    }
 
+   public function employees() {
+        return $this->hasMany(Employee::class,'department_id','id');
+   }
+
    public function getListLevel() {
         $result = $this->department_name;
         $id = $this->parent_id;

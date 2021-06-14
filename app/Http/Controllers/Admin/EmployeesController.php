@@ -7,6 +7,7 @@ use App\Department;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Position;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EmployeesController extends Controller
@@ -48,6 +49,7 @@ class EmployeesController extends Controller
 //        dump($contacts);
 //        die;
         $employees = Employee::all();
+        //dd($employees->find(6)->position->position_name);
         //dd($employees->find(6)->department->getlistLevel());
         return view('admin.employee.index',['employees'=>$employees]);
     }
@@ -61,13 +63,16 @@ class EmployeesController extends Controller
 
     public function store(StoreEmployeeRequest $request) {
 
-        dump($request);
+        $this->validate($request, $request->rules());
+        $fields=$request->all();
+        //convert date from request to MySQL format
+        $fields['birthday'] = Carbon::parse($request->birthday);
+        $fields['date_in'] = Carbon::parse($request->date_in);
+        $employee = Employee::add($fields);
+        $employee->uploadPhoto($request->file('photo'));
 
-        dd($this->validate($request, $request->rules()));
 
-        $validator = $request->validated;
-        dump($validator->errors());
-        dd($request->all());
+
         return redirect()->route('employee.index');
     }
 

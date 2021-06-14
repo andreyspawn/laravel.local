@@ -26,17 +26,22 @@ class StoreEmployeeRequest extends FormRequest
         return [
             //
             'last_name' => 'required|max:15',
-            'name' => 'required|string',
-            'fathers_name' => 'required|string',
+            'name' => 'required|string|max:15',
+            'fathers_name' => 'required|string|max:15',
+            'email' => 'nullable|email',
+            'birthday' => 'required|date',
+
         ];
     }
 
     public function messages()
     {
         return [
-            'last_name' => 'Необходимо указать фамилию',
-            'name'  => 'Необходимо указать имя',
-            'fathers_name' => 'Необходимо указать отчество'
+            'last_name.required' => 'Необходимо указать фамилию',
+            'name.required'  => 'Необходимо указать имя',
+            'fathers_name.required' => 'Необходимо указать отчество',
+            'birthday.required' => 'Необходимо указать дату рождения',
+
         ];
     }
 }

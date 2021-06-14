@@ -53,8 +53,9 @@
                         <td><img class="empimage" src="{{$employee->photo}}" alt="" width="70"></td>
 {{--                        <td>{{dump(URL::asset($employee->photo))}}</td>--}}
                         <td>{{$employee->last_name}} {{$employee->name}} {{$employee->fathers_name}}</td>
-                        <td>{{$employee->position->position_name}}</td>
-                        <td>{{$employee->department->getListLevel()}}</td>
+                        <td>{{@$employee->position->position_name}}</td>
+                        <td>{{@$employee->department->department_name}}</td>
+{{--                        {{$employee->department->getListLevel()}}--}}
                         <td>{{$employee->date_in}}</td>
                         <td><a href="edit.html" class="fa fa-pencil"></a> <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove"></a></td>
                     </tr>
