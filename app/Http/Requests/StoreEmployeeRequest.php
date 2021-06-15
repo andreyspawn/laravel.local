@@ -24,19 +24,24 @@ class StoreEmployeeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-            'last_name' => 'required|max:15',
-            'name' => 'required|string',
-            'fathers_name' => 'required|string',
+            'last_name' => 'required|string|min:3|max:15',
+            'name' => 'required|string|max:15',
+            'fathers_name' => 'required|string|max:15',
+            'email' => 'nullable|email',
+            'birthday' => 'required|date',
+            'date_in' => 'required|date'
         ];
     }
 
     public function messages()
     {
         return [
-            'last_name' => 'Необходимо указать фамилию',
-            'name'  => 'Необходимо указать имя',
-            'fathers_name' => 'Необходимо указать отчество'
+            'last_name.required' => 'Необходимо указать фамилию',
+            'name.required'  => 'Необходимо указать имя',
+            'fathers_name.required' => 'Необходимо указать отчество',
+            'birthday.required' => 'Не указана дата рождения или формат отличен от дд-мм-гггг',
+            'date_in.required' => 'Не указана дата приема на работу или формат отличен от дд-мм-гггг',
         ];
     }
+
 }

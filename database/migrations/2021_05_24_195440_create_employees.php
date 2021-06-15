@@ -17,9 +17,9 @@ class CreateEmployees extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id()->nullable(false); //employee's id
-            $table->string('last_name',30)->nullable(false); //employee's surname
-            $table->string('name',30)->nullable(false);//employee's name
-            $table->string('fathers_name',30)->nullable(false);//
+            $table->string('last_name',20)->nullable(false); //employee's surname
+            $table->string('name',20)->nullable(false);//employee's name
+            $table->string('fathers_name',20)->nullable(false);//
             $table->date('birthday')->nullable();
             $table->date('date_in')->default(Carbon::now());
             $table->string('email',50);

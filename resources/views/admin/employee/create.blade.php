@@ -23,33 +23,57 @@
 
 
                 <div class="box-body">
+{{--                    @if($errors->any())--}}
+{{--                        <?php dd($errors) ?>--}}
+{{--                    @endif--}}
                     @if($errors->any())
-                        <?php dd($errors->last_name) ?>
+                        <div class="alert alert-warning">
+                            Ошибки ввода данных!!!!
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </div>
                     @endif
                     <div>
                         <div class="col-md-6">
+                            <!-- surname -->
                             <div class="form-group">
-                                <label for="last_name">Фамилия</label>
-                                <input type="text" class="form-control" id="lastName" name="last_name"
-                                       placeholder="Иванов">
+                                <label for="last_name">Фамилия <b class="text-red">*</b></label>
+                                <input type="text" class="form-control" id="lastName"
+                                       name="last_name" placeholder="Иванов">
                             </div>
+
+                            <!-- name -->
                             <div class="form-group">
-                                <label for="name">Имя</label>
-                                <input type="text" class="form-control" id="Name" name="name"
-                                       placeholder="Иван">
+                                <label for="name">Имя <b class="text-red">*</b></label>
+                                <input type="text" class="form-control" id="Name"
+                                       name="name" placeholder="Иван">
                             </div>
+
+                            <!-- fathers name -->
                             <div class="form-group">
-                                <label for="fathers_name">Отчество</label>
-                                <input type="text" class="form-control" id="FathersName" name="fathers_name"
-                                       placeholder="Иванович">
+                                <label for="fathers_name">Отчество <b class="text-red">*</b></label>
+                                <input type="text" class="form-control" id="FathersName"
+                                       name="fathers_name" placeholder="Иванович">
                             </div>
+
+                            <!-- email -->
                             <div class="form-group">
-                                <label>Дата рождения:</label>
+                                <label for="fathers_name">Email</label>
+                                <input type="email" class="form-control" id="FathersName" name="email"
+                                       placeholder="email">
+                            </div>
+
+                            <!-- birthday -->
+                            <div class="form-group">
+                                <label>Дата рождения: <b class="text-red">*</b> </label>
                                 <div class="input-group date">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" class="form-control pull-right" id="datepicker1" name="birthday">
+                                    <input type="text" data-date-format="dd-mm-yyyy"
+                                           class="datepicker form-control pull-right"
+                                           id="datepicker1" name="birthday">
                                 </div>
                             </div>
 
@@ -89,40 +113,25 @@
                             {{--                            </select>--}}
                         </div>
 
-                        <!-- For tags with multiple select -->
-                    {{--                        <div class="form-group">--}}
-                    {{--                            <label>Теги</label>--}}
-                    {{--                            <select class="form-control select2" multiple="multiple" data-placeholder="Выберите теги"--}}
-                    {{--                                    style="width: 100%;">--}}
-                    {{--                                <option>Alabama</option>--}}
-                    {{--                                <option>Alaska</option>--}}
-                    {{--                                <option>California</option>--}}
-                    {{--                                <option>Delaware</option>--}}
-                    {{--                                <option>Tennessee</option>--}}
-                    {{--                                <option>Texas</option>--}}
-                    {{--                                <option>Washington</option>--}}
-                    {{--                            </select>--}}
-                    {{--                        </div>--}}
-
-                    <!-- Date -->
+                        <!-- day work access -->
                         <div class="form-group">
-                            <label>Дата приема на работу:</label>
+                            <label>Дата приема на работу: <b class="text-red">*</b> </label>
                             <div class="input-group date">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control pull-right" id="datepicker2" name="date_in">
+                                <input type="text" data-date-format="dd-mm-yyyy"
+                                       class="datepicker form-control pull-right" id="datepicker2"
+                                       value="{{date('d-m-Y')}}" name="date_in">
                             </div>
-                            <!-- /.input group -->
                         </div>
-
 
                     </div>
 
                     <div class="col-md-10">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Заметка о сотруднике</label>
-                            <textarea name="" id="" cols="25" rows="10" class="form-control" name="note"></textarea>
+                            <label for="note_about">Заметка о сотруднике</label>
+                            <textarea id="note_about" cols="20" rows="5" class="form-control" name="note"></textarea>
                         </div>
 
                         <!-- checkbox -->
@@ -140,6 +149,7 @@
 
                 <!-- /.box-body -->
                 <div class="box-footer">
+                    <a href="{{route('employee.index')}}" class="btn btn-info">Назад</a>
                     <button class="btn btn-default" onclick="history.back();">Назад</button>
                     <button type="submit" class="btn btn-success pull-right">Добавить</button>
                 </div>

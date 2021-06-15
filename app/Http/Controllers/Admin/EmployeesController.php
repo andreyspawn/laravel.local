@@ -7,6 +7,7 @@ use App\Department;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Position;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EmployeesController extends Controller
@@ -61,13 +62,21 @@ class EmployeesController extends Controller
 
     public function store(StoreEmployeeRequest $request) {
 
-        dump($request);
+        //dd($request);
 
-        dd($this->validate($request, $request->rules()));
+        $this->validate($request, $request->rules());
 
-        $validator = $request->validated;
-        dump($validator->errors());
-        dd($request->all());
+        $fields = $request->all();
+        $fields['birthday'] = Carbon::parse($request->get('birthday'))->format('Y-m-d');
+        $fields['date_in'] = Carbon::parse($request->get('date_in'))->format('Y-m-d');
+
+
+        dump($request->all());
+        $employee=Employee::add($fields);
+        $employee->position_id=2;
+        $employee->department_id=2;
+        $employee->uploadImage($request->file('photo'));
+        dd($employee);
         return redirect()->route('employee.index');
     }
 

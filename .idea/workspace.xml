@@ -19,10 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="Один из студентов обратился с тестовой задачей по переборке структуры json - сотворили все на PHP&#10;есть подозрение что в js это может быть гораздо проще - но нужно разбираться.">
+    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="Работа с валидатором">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Department.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Employee.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmployeesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmployeesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEmployeeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreEmployeeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Position.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Position.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_24_195440_create_employees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/employee/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/employee/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +217,9 @@
       <workItem from="1620318807462" duration="12015000" />
       <workItem from="1620749893650" duration="25547000" />
       <workItem from="1622528982220" duration="15064000" />
-      <workItem from="1623337700575" duration="5368000" />
+      <workItem from="1623337700575" duration="5421000" />
+      <workItem from="1623483023240" duration="24987000" />
+      <workItem from="1623624459466" duration="176000" />
     </task>
     <task id="LOCAL-00001" summary="04-05-2021 - начало сбора шаблона и менюшек">
       <created>1620150556596</created>
@@ -283,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623271962261</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Работа с валидатором">
+      <created>1623363602708</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1623363602708</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +339,8 @@
     <MESSAGE value="Начало работы над иерархическим запросом в Department" />
     <MESSAGE value="Сделал иерархический вывод подразделений Departments" />
     <MESSAGE value="Один из студентов обратился с тестовой задачей по переборке структуры json - сотворили все на PHP&#10;есть подозрение что в js это может быть гораздо проще - но нужно разбираться." />
-    <option name="LAST_COMMIT_MESSAGE" value="Один из студентов обратился с тестовой задачей по переборке структуры json - сотворили все на PHP&#10;есть подозрение что в js это может быть гораздо проще - но нужно разбираться." />
+    <MESSAGE value="Работа с валидатором" />
+    <option name="LAST_COMMIT_MESSAGE" value="Работа с валидатором" />
   </component>
   <component name="WindowStateProjectService">
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1620761808087">
@@ -356,20 +372,28 @@
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1623267098859" />
     <state x="739" y="427" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622203948454" />
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1623271966002">
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1623624615015">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1623271966002" />
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1623624615015" />
     <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620895040414" />
     <state x="416" y="197" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622210871709" />
-    <state x="583" y="359" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623342205308">
+    <state x="583" y="359" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623483136707">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="583" y="359" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1623342205308" />
+    <state x="583" y="359" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1623483136707" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622530253433" />
     <state x="427" y="29" width="585" height="801" key="find.popup" timestamp="1620761884534">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="427" y="29" width="585" height="801" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1620761884534" />
+    <state x="376" y="195" key="run.anything.popup" timestamp="1623491540989">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1623491540989" />
+    <state x="383" y="180" key="search.everywhere.popup" timestamp="1623530853935">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="180" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1623530853935" />
   </component>
 </project>

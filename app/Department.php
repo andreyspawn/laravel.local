@@ -35,6 +35,10 @@ class Department extends Model
         return $result;
     }
 
+    public function employees() {
+        return $this->hasMany(Employee::class,'department_id','id');
+    }
+
 
 }
 
