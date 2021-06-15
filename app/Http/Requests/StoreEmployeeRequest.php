@@ -27,7 +27,7 @@ class StoreEmployeeRequest extends FormRequest
             'last_name' => 'required|string|min:3|max:15',
             'name' => 'required|string|max:15',
             'fathers_name' => 'required|string|max:15',
-            'email' => 'nullable|email',
+            'email' => 'nullable|email|unique:employees,email',
             'birthday' => 'required|date',
             'date_in' => 'required|date'
         ];
