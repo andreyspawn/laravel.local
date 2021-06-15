@@ -32,6 +32,12 @@ class Employee extends Model
         if ($image === null) {
             return;
         }
+        $filename = 'photo'.$this->id.'.'.$image->extension();
+        if ($image->isValid()) {
+            $image->storeAs('photo',$filename);
+        }
+        $this->photo = '/photo/'.$filename;
+        $this->save();
         dd($image);
     }
 
