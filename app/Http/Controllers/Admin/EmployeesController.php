@@ -54,8 +54,8 @@ class EmployeesController extends Controller
     }
 
     public function create() {
-        $departments = Department::pluck('department_name')->all();
-        $positions = Position::pluck('position_name')->all();
+        $departments = Department::pluck('department_name','id');
+        $positions = Position::pluck('position_name','id');
         //dd($positions);
         return view('admin.employee.create',['departments'=>$departments,'positions'=>$positions]);
     }
@@ -73,9 +73,9 @@ class EmployeesController extends Controller
 
         dump($request->all());
         $employee=Employee::add($fields);
-        $employee->position_id=2;
-        $employee->department_id=2;
         $employee->uploadImage($request->file('photo'));
+        $employee->setPosition($request->get('position_id'));
+        $employee->setDepartment($request->get('department_id'));
         dd($employee);
         return redirect()->route('employee.index');
     }

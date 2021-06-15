@@ -30,7 +30,7 @@ class Employee extends Model
     public function uploadImage($image)
     {
         if ($image === null) {
-            return;
+            return false;
         }
         $filename = 'photo'.$this->id.'.'.$image->extension();
         if ($image->isValid()) {
@@ -38,7 +38,25 @@ class Employee extends Model
         }
         $this->photo = '/photo/'.$filename;
         $this->save();
-        dd($image);
+        return true;
+    }
+
+    public function setPosition($id) {
+        if ($id === null) {
+            return false;
+        }
+        $this->position_id=$id;
+        $this->save();
+        return true;
+    }
+
+    public function setDepartment($id) {
+        if ($id === null) {
+            return false;
+        }
+        $this->department_id=$id;
+        $this->save();
+        return true;
     }
 
     //single employee has ONE departments

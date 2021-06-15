@@ -91,7 +91,7 @@
 
                         <div class="form-group">
                             <label>Подразделение</label>
-                            {{Form::select('department',$departments,null,['class'=>'form-control select2',
+                            {{Form::select('department_id',$departments,null,['class'=>'form-control select2',
                                     'style'=>'width:100%', 'placeholder' => 'не выбрано'])}}
                             {{--                            <select class="form-control select2" style="width: 100%;">--}}
                             {{--                                <option selected="selected">не выбрано</option>--}}
@@ -103,7 +103,7 @@
 
                         <div class="form-group">
                             <label>Должность</label>
-                            {{Form::select('position',$positions,null,['class'=>'form-control select2',
+                            {{Form::select('position_id',$positions,null,['class'=>'form-control select2',
                                     'style'=>'width:100%', 'placeholder' => 'не выбрано'])}}
                             {{--                            <select class="form-control select2" style="width: 100%;">--}}
                             {{--                                <option selected="selected">не выбрано</option>--}}
