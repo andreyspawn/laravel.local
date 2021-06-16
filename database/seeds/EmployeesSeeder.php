@@ -20,7 +20,7 @@ class EmployeesSeeder extends Seeder
         $faker=Faker::create('ru_RU');
         $femail_user='female_user';
         $mail_user='male_user';
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= 50; $i++) {
             switch (rand(0,1)) {
                 case 0:
                     DB::table('employees')->insert(['last_name' => $faker->lastName('female'),

@@ -10,7 +10,7 @@
                     <h3 class="box-title">Список подразделений</h3>
                 </div>
                 <div class="box-body">
-
+// dd($children)
                     @foreach ($children as $child)
                         <ul class="list-group">
                             <li class="list-group-item">
