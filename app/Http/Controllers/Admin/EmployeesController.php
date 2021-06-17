@@ -71,12 +71,12 @@ class EmployeesController extends Controller
         $fields['date_in'] = Carbon::parse($request->get('date_in'))->format('Y-m-d');
 
 
-        dump($request->all());
+        //dump($request->all());
         $employee=Employee::add($fields);
         $employee->uploadImage($request->file('photo'));
         $employee->setPosition($request->get('position_id'));
         $employee->setDepartment($request->get('department_id'));
-        dd($employee);
+        //dd($employee);
         return redirect()->route('employee.index');
     }
 

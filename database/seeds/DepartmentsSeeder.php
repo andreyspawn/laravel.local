@@ -42,7 +42,7 @@ class DepartmentsSeeder extends Seeder
         //handle chief departments
         $count = DB::table('departments')->max('id');
         for ($i =1 ; $i<=$count;$i++) {
-            $emp_id = $faker->unique()->numberBetween(1,100);
+            $emp_id = $faker->unique()->numberBetween(1,50);
             $pos = Department::all()->find($i);
             DB::table('departments')->where('id',$i)->update([
                 'chief_id'=>$emp_id

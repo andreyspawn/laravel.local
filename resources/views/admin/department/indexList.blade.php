@@ -10,13 +10,13 @@
                     <h3 class="box-title">Список подразделений</h3>
                 </div>
                 <div class="box-body">
-// dd($children)
+{{--dd($children)--}}
                     @foreach ($children as $child)
                         <ul class="list-group">
                             <li class="list-group-item">
 
                                 <a href="#{{$child->id}}"> {{ $child->department_name }}
-                                    ({{$child->chief->position->position_name}}: {{$child->chief->last_name}} {{$child->chief->name}}) </a>
+                                    ({{@$child->chief->position->position_name}}: {{@$child->chief->last_name}} {{@$child->chief->name}}) </a>
 
                                 <a href="edit.html" class="fa fa-pencil"></a>
                                 <a href="{{route('department.delete',$child->id)}}" class="fa fa-remove"></a>
