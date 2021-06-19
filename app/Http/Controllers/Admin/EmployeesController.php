@@ -80,6 +80,52 @@ class EmployeesController extends Controller
         return redirect()->route('employee.index');
     }
 
+    public function edit($id) {
+
+        $employee = Employee::find($id);
+        $department_id = $employee->department->id;
+        $position_id = $employee->position->id;
+        $departments = Department::pluck('department_name','id');
+        $positions = Position::pluck('position_name','id');
+        if ($employee->is_visual === 1) {
+            $is_visual = 'checked';
+        }
+        else $is_visual = '';
+
+        return view('admin.employee.edit',[
+            'last_name' => $employee->last_name,
+            'name' => $employee->name,
+            'fathers_name' => $employee->fathers_name,
+            'birthday' => Carbon::parse($employee->birthday)->format('d-m-Y'),
+            'date_in' => Carbon::parse($employee->date_in)->format('d-m-Y'),
+            'email' => $employee->email,
+            'departments'=>$departments,
+            'positions'=>$positions,
+            'department_id' => $department_id,
+            'position_id' => $position_id,
+            'photo' => $employee->photo,
+            'is_visual' => $is_visual,
+            'note' => $employee->note,
+            'id' => $id
+
+        ]);
+
+    }
+
+    public function update(StoreEmployeeRequest $request) {
+
+        $this->validate($request, $request->rules());
+
+        $employee = Employee::find($request->get('id'));
+        $employee->set($request);
+        dd($employee);
+
+
+        return redirect()->route('employee.index');
+    }
+
+
+
     public function delete($id) {
         Employee::find($id)->delete();
         return redirect()->route('employee.index');

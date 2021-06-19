@@ -11,7 +11,9 @@
     <!-- Main content -->
     <section class="content">
 
-        {{ Form::open(['route' => 'employee.store','method' => 'post','files' => true]) }}
+        {{ Form::open(['route' => 'employee.index','method' => 'post','files' => true]) }}
+
+        {{Form::hidden('id', $id)}}
 
         <div class="col-md-10">
 
@@ -40,28 +42,28 @@
                             <div class="form-group">
                                 <label for="last_name">Фамилия <b class="text-red">*</b></label>
                                 <input type="text" class="form-control" id="lastName"
-                                       name="last_name" placeholder="Иванов">
+                                       name="last_name" value="{{$last_name}}">
                             </div>
 
                             <!-- name -->
                             <div class="form-group">
                                 <label for="name">Имя <b class="text-red">*</b></label>
                                 <input type="text" class="form-control" id="Name"
-                                       name="name" placeholder="Иван">
+                                       name="name" value="{{$name}}">
                             </div>
 
                             <!-- fathers name -->
                             <div class="form-group">
                                 <label for="fathers_name">Отчество <b class="text-red">*</b></label>
                                 <input type="text" class="form-control" id="FathersName"
-                                       name="fathers_name" placeholder="Иванович">
+                                       name="fathers_name" value="{{$fathers_name}}">
                             </div>
 
                             <!-- email -->
                             <div class="form-group">
                                 <label for="fathers_name">Email</label>
                                 <input type="email" class="form-control" id="FathersName" name="email"
-                                       placeholder="email">
+                                       value="{{$email}}">
                             </div>
 
                             <!-- birthday -->
@@ -73,8 +75,12 @@
                                     </div>
                                     <input type="text" data-date-format="dd-mm-yyyy"
                                            class="datepicker form-control pull-right"
-                                           id="datepicker1" name="birthday">
+                                           id="datepicker1" name="birthday"
+                                           value="{{$birthday}}">
                                 </div>
+                            </div>
+                            <div>
+                                <img src="{{$photo}}" alt="" width="70">
                             </div>
 
                             <div class="form-group">
@@ -91,7 +97,7 @@
 
                         <div class="form-group">
                             <label>Подразделение</label>
-                            {{Form::select('department_id',$departments,null,['class'=>'form-control select2',
+                            {{Form::select('department_id',$departments,$department_id,['class'=>'form-control select2',
                                     'style'=>'width:100%', 'placeholder' => 'не выбрано'])}}
                             {{--                            <select class="form-control select2" style="width: 100%;">--}}
                             {{--                                <option selected="selected">не выбрано</option>--}}
@@ -103,7 +109,7 @@
 
                         <div class="form-group">
                             <label>Должность</label>
-                            {{Form::select('position_id',$positions,null,['class'=>'form-control select2',
+                            {{Form::select('position_id',$positions,$position_id,['class'=>'form-control select2',
                                     'style'=>'width:100%', 'placeholder' => 'не выбрано'])}}
                             {{--                            <select class="form-control select2" style="width: 100%;">--}}
                             {{--                                <option selected="selected">не выбрано</option>--}}
@@ -131,13 +137,13 @@
                     <div class="col-md-10">
                         <div class="form-group">
                             <label for="note_about">Заметка о сотруднике</label>
-                            <textarea id="note_about" cols="20" rows="5" class="form-control" name="note"></textarea>
+                            <textarea id="note_about" cols="20" rows="5" class="form-control" name="note"> {{$note}}</textarea>
                         </div>
 
                         <!-- checkbox -->
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" name="check_is_visual">
+                                <input type="checkbox" name="check_is_visual" {{$is_visual}}>
                             </label>
                             <label>
                                 Показывать данные в карточке сотрудника

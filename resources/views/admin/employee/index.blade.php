@@ -58,7 +58,7 @@
                         <td>{{@$employee->position->position_name}}</td>
                         <td>Подчиненность подразделений {{@$employee->department->department_name}}</td>
                         <td>{{$employee->date_in}}</td>
-                        <td><a href="edit.html" class="fa fa-pencil"></a> <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove"></a></td>
+                        <td><a href="{{route('employee.edit',$employee->id)}}" class="fa fa-pencil"></a> <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove"></a></td>
                     </tr>
                     @endforeach
 

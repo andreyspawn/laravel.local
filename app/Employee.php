@@ -19,6 +19,7 @@ class Employee extends Model
         'note'
     ];
 
+//add data to new record
     public static function add($fields)
     {
         $employee = new self;
@@ -27,6 +28,13 @@ class Employee extends Model
         return $employee;
     }
 
+    public function set($fields) {
+        $this->fill($fields);
+        $this->save();
+        return $this;
+    }
+
+//save image during create records emploeyee
     public function uploadImage($image)
     {
         if ($image === null) {
@@ -41,6 +49,7 @@ class Employee extends Model
         return true;
     }
 
+//set data about position
     public function setPosition($id) {
         if ($id === null) {
             return false;
@@ -50,6 +59,7 @@ class Employee extends Model
         return true;
     }
 
+    //set data about department
     public function setDepartment($id) {
         if ($id === null) {
             return false;
@@ -65,10 +75,16 @@ class Employee extends Model
         return $this->belongsTo(Department::class, 'department_id', 'id');
     }
 
+    //single employee has ONE position
     public function position()
     {
-        return $this->hasOne(Position::class, 'id', 'position_id');
+        return $this->belongsTo(Position::class, 'position_id', 'id');
     }
+
+//    public function position()
+//    {
+//        return $this->hasOne(Position::class, 'id', 'position_id');
+//    }
 
 
 }
