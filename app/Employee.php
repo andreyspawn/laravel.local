@@ -28,23 +28,24 @@ class Employee extends Model
         return $employee;
     }
 
-    public function set($fields) {
+    public function set($fields)
+    {
         $this->fill($fields);
         $this->save();
         return $this;
     }
 
 //save image during create records emploeyee
-    public function uploadImage($image)
+    public function uploadPhoto($image)
     {
         if ($image === null) {
             return false;
         }
-        $filename = 'photo'.$this->id.'.'.$image->extension();
+        $filename = rand().'photo'.$this->id.'.'.$image->extension();
         if ($image->isValid()) {
             $image->storeAs('photo',$filename);
         }
-        $this->photo = '/photo/'.$filename;
+        $this->photo = $filename;
         $this->save();
         return true;
     }
@@ -67,6 +68,45 @@ class Employee extends Model
         $this->department_id=$id;
         $this->save();
         return true;
+    }
+
+    public function toggleVisual($is_visual)
+    {
+        $result ='';
+        if ($is_visual === 'on') {
+            $this->is_visual = true;
+            $result='checked';
+            $this->save();
+            return $result;
+        }
+        $this->is_visual = false;
+        $this->save();
+        return $result;
+    }
+
+    public function getVisual($is_visual)
+    {
+        if ($is_visual === 1) {
+            return 'checked';
+        }
+        return '';
+    }
+
+    public function getPhoto()
+    {
+        if (($this->photo===null)||(!file_exists(public_path('/photo/' . $this->photo))))
+        {
+            return '/images/unnamed.png';
+        }
+        return '/photo/' . $this->photo;
+
+//
+//        if (file_exists(public_path('/photo/' . $this->photo))) {
+//            return '/photo/' . $this->photo;
+//        } else {
+//            return '/images/unnamed.png';
+//        }
+
     }
 
     //single employee has ONE departments

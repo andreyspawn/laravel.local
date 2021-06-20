@@ -60,28 +60,23 @@ class EmployeesController extends Controller
         return view('admin.employee.create',['departments'=>$departments,'positions'=>$positions]);
     }
 
-    public function store(StoreEmployeeRequest $request) {
-
-        //dd($request);
-
+    public function store(StoreEmployeeRequest $request)
+    {
         $this->validate($request, $request->rules());
-
         $fields = $request->all();
         $fields['birthday'] = Carbon::parse($request->get('birthday'))->format('Y-m-d');
         $fields['date_in'] = Carbon::parse($request->get('date_in'))->format('Y-m-d');
-
-
-        //dump($request->all());
         $employee=Employee::add($fields);
-        $employee->uploadImage($request->file('photo'));
+        $employee->uploadPhoto($request->file('photo'));
         $employee->setPosition($request->get('position_id'));
         $employee->setDepartment($request->get('department_id'));
+        $employee->toggleVisual($request->get('is_visual',false));
         //dd($employee);
         return redirect()->route('employee.index');
     }
 
-    public function edit($id) {
-
+    public function edit($id)
+    {
         $employee = Employee::find($id);
         $department_id = $employee->department->id;
         $position_id = $employee->position->id;
@@ -91,36 +86,52 @@ class EmployeesController extends Controller
             $is_visual = 'checked';
         }
         else $is_visual = '';
+        //dd($employee->getVisual($employee->is_visual));
+//        return view('admin.employee.edit',[
+//            'last_name' => $employee->last_name,
+//            'name' => $employee->name,
+//            'fathers_name' => $employee->fathers_name,
+//            'birthday' => Carbon::parse($employee->birthday)->format('d-m-Y'),
+//            'date_in' => Carbon::parse($employee->date_in)->format('d-m-Y'),
+//            'email' => $employee->email,
+//            'departments'=>$departments,
+//            'positions'=>$positions,
+//            'department_id' => $department_id,
+//            'position_id' => $position_id,
+//            'photo' => $employee->photo,
+//            'is_visual' => $employee->getVisual($employee->is_visual),
+//            'note' => $employee->note,
+//            'id' => $id
+//
+//        ]);
 
-        return view('admin.employee.edit',[
-            'last_name' => $employee->last_name,
-            'name' => $employee->name,
-            'fathers_name' => $employee->fathers_name,
+        return view('admin.employee.edit1',[
+            'employee' => $employee,
             'birthday' => Carbon::parse($employee->birthday)->format('d-m-Y'),
             'date_in' => Carbon::parse($employee->date_in)->format('d-m-Y'),
-            'email' => $employee->email,
             'departments'=>$departments,
             'positions'=>$positions,
             'department_id' => $department_id,
             'position_id' => $position_id,
-            'photo' => $employee->photo,
-            'is_visual' => $is_visual,
-            'note' => $employee->note,
-            'id' => $id
-
+            'is_visual' => $employee->getVisual($employee->is_visual)
         ]);
+
 
     }
 
-    public function update(StoreEmployeeRequest $request) {
+    public function update(StoreEmployeeRequest $request)
+    {
 
         $this->validate($request, $request->rules());
-
         $employee = Employee::find($request->get('id'));
-        $employee->set($request);
-        dd($employee);
-
-
+        $fields=$request->all();
+        $fields['birthday'] = Carbon::parse($request->get('birthday'))->format('Y-m-d');
+        $fields['date_in'] = Carbon::parse($request->get('date_in'))->format('Y-m-d');
+        $employee->set($fields);
+        $employee->uploadPhoto($request->file('photo'));
+        $employee->setPosition($request->get('position_id'));
+        $employee->setDepartment($request->get('department_id'));
+        $employee->toggleVisual($request->get('is_visual',false));
         return redirect()->route('employee.index');
     }
 

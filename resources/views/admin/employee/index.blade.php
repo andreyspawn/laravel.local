@@ -51,12 +51,14 @@
                         <td>{{$employee->id}}</td>
 {{--<!--                        --><?php //$num = '/images/user'.rand(1,8).'.jpg';?>--}}
 {{--                        {{$employee->department->getListLevel()}}--}}
+{{--                        {{$employee->department->department_name ?? 'сотруднику не назначено подразделение'}}--}}
 
-                        <td><img class="empimage" src="{{$employee->photo}}" alt="" width="70"></td>
+                        <td><img class="empimage" src="{{$employee->getPhoto()}}" alt="" width="70"></td>
 {{--                        <td>{{dump(URL::asset($employee->photo))}}</td>--}}
                         <td>{{$employee->last_name}} {{$employee->name}} {{$employee->fathers_name}}</td>
-                        <td>{{@$employee->position->position_name}}</td>
-                        <td>Подчиненность подразделений {{@$employee->department->department_name}}</td>
+                        <td>{{$employee->position->position_name}}</td>
+                        <td>{{$employee->department->department_name ?? "Без подразделения"}}
+                        </td>
                         <td>{{$employee->date_in}}</td>
                         <td><a href="{{route('employee.edit',$employee->id)}}" class="fa fa-pencil"></a> <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove"></a></td>
                     </tr>

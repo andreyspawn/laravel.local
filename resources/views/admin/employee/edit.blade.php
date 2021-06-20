@@ -3,16 +3,28 @@
 @section('content')
 
 <!-- =============================================== -->
+<!-- photo preview -->
+<script type='text/javascript'>
+    function preview_image(event)
+    {
+        var reader = new FileReader();
+        reader.onload = function()
+        {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" style="min-height: 901px">
     <!-- Content Header (Page header) -->
 
     <!-- Main content -->
     <section class="content">
 
-        {{ Form::open(['route' => 'employee.index','method' => 'post','files' => true]) }}
-
+        {{ Form::open(['route' => ['employee.update',$id],'method' => 'post','files' => true]) }}
         {{Form::hidden('id', $id)}}
 
         <div class="col-md-10">
@@ -20,9 +32,8 @@
             <!-- Default box -->
             <div class="box box-solid box-default">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Карточка нового сотрудника</h3>
+                    <h3 class="box-title">Изменить карточку сотрудника</h3>
                 </div>
-
 
                 <div class="box-body">
 {{--                    @if($errors->any())--}}
@@ -61,8 +72,8 @@
 
                             <!-- email -->
                             <div class="form-group">
-                                <label for="fathers_name">Email</label>
-                                <input type="email" class="form-control" id="FathersName" name="email"
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"
                                        value="{{$email}}">
                             </div>
 
@@ -79,13 +90,18 @@
                                            value="{{$birthday}}">
                                 </div>
                             </div>
-                            <div>
-                                <img src="{{$photo}}" alt="" width="70">
-                            </div>
+
+                            {{--                            <div>--}}
+{{--                                <img src="{{$photo}}" alt="" width="70">--}}
+{{--                            </div>--}}
 
                             <div class="form-group">
                                 <label for="exampleInputFile">Фото</label>
-                                <input type="file" id="exampleInputFile" name="photo">
+                                <div>
+                                    <img id="output_image" />
+                                </div>
+                                {{--                                onchange="preview_image(event)"--}}
+                                <input type="file" id="exampleInputFile" name="photo" onchange="preview_image(event)">
                                 <p class="help-block">Фотография сотрудника в формате....</p>
                             </div>
 
@@ -143,7 +159,7 @@
                         <!-- checkbox -->
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" name="check_is_visual" {{$is_visual}}>
+                                <input type="checkbox" name="is_visual" {{$is_visual}}>
                             </label>
                             <label>
                                 Показывать данные в карточке сотрудника
@@ -170,3 +186,6 @@
 </div>
 <!-- /.content-wrapper -->
 @endsection('content')
+
+
+

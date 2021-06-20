@@ -4,3 +4,8 @@
     margin: 0 auto;
     display: block;
 }
+
+#output_image
+{
+    max-width:200px;
+}

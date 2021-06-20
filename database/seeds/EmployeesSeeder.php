@@ -11,7 +11,7 @@ class EmployeesSeeder extends Seeder
      *
      * @return void
      */
-    const RESOURCES_IMG='/images/';
+
 
     public function run()
     {
@@ -26,7 +26,7 @@ class EmployeesSeeder extends Seeder
                     DB::table('employees')->insert(['last_name' => $faker->lastName('female'),
                     'name' => $faker->firstNameFemale(),
                     'fathers_name' => $faker->middleNameFemale(),
-                    'photo'=>self::RESOURCES_IMG.$femail_user.$faker->randomElement([3,4,5,7]).'.jpg',
+                    'photo'=>$femail_user.$faker->randomElement([3,4,5,7]).'.jpg',
                     'date_in' => $faker->dateTimeBetween('-5 years'),
                     'birthday'=>$faker->dateTimeBetween('-60 years', '-22 years'),
                     'email' => $faker->email
@@ -35,7 +35,7 @@ class EmployeesSeeder extends Seeder
                     DB::table('employees')->insert(['last_name' => $faker->lastName('male'),
                         'name' => $faker->firstNameMale(),
                         'fathers_name' => $faker->middleNameMale(),
-                        'photo'=>self::RESOURCES_IMG.$mail_user.$faker->randomElement([1,2,6,8]).'.jpg',
+                        'photo'=>$mail_user.$faker->randomElement([1,2,6,8]).'.jpg',
                         'date_in' => $faker->dateTimeBetween('-5 years'),
                         'birthday'=>$faker->dateTimeBetween('-60 years', '-22 years'),
                         'email' => $faker->email
