@@ -34,6 +34,7 @@ class DepartmentsController extends Controller
     public function store(Request $request)
     {
         dd($request);
+
         return redirect()->route('department.index');
     }
 
