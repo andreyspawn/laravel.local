@@ -10,6 +10,9 @@
                     <h3 class="box-title">Список подразделений</h3>
                 </div>
                 <div class="box-body">
+                    <div class="form-group">
+                        <a href="{{ route('department.create') }}" class="btn btn-success">Добавить</a>
+                    </div>
 {{--dd($children)--}}
                     @foreach ($children as $child)
                         <ul class="list-group">

@@ -19,6 +19,7 @@ class Employee extends Model
         'note'
     ];
 
+//add data to new record
     public static function add($fields)
     {
         $employee = new self;
@@ -27,20 +28,29 @@ class Employee extends Model
         return $employee;
     }
 
-    public function uploadImage($image)
+    public function set($fields)
+    {
+        $this->fill($fields);
+        $this->save();
+        return $this;
+    }
+
+//save image during create records emploeyee
+    public function uploadPhoto($image)
     {
         if ($image === null) {
             return false;
         }
-        $filename = 'photo'.$this->id.'.'.$image->extension();
+        $filename = rand().'photo'.$this->id.'.'.$image->extension();
         if ($image->isValid()) {
             $image->storeAs('photo',$filename);
         }
-        $this->photo = '/photo/'.$filename;
+        $this->photo = $filename;
         $this->save();
         return true;
     }
 
+//set data about position
     public function setPosition($id) {
         if ($id === null) {
             return false;
@@ -50,6 +60,7 @@ class Employee extends Model
         return true;
     }
 
+    //set data about department
     public function setDepartment($id) {
         if ($id === null) {
             return false;
@@ -59,16 +70,61 @@ class Employee extends Model
         return true;
     }
 
+    public function toggleVisual($is_visual)
+    {
+        $result ='';
+        if ($is_visual === 'on') {
+            $this->is_visual = true;
+            $result='checked';
+            $this->save();
+            return $result;
+        }
+        $this->is_visual = false;
+        $this->save();
+        return $result;
+    }
+
+    public function getVisual($is_visual)
+    {
+        if ($is_visual === 1) {
+            return 'checked';
+        }
+        return '';
+    }
+
+    public function getPhoto()
+    {
+        if (($this->photo===null)||(!file_exists(public_path('/photo/' . $this->photo))))
+        {
+            return '/images/unnamed.png';
+        }
+        return '/photo/' . $this->photo;
+
+//
+//        if (file_exists(public_path('/photo/' . $this->photo))) {
+//            return '/photo/' . $this->photo;
+//        } else {
+//            return '/images/unnamed.png';
+//        }
+
+    }
+
     //single employee has ONE departments
     public function department()
     {
         return $this->belongsTo(Department::class, 'department_id', 'id');
     }
 
+    //single employee has ONE position
     public function position()
     {
-        return $this->hasOne(Position::class, 'id', 'position_id');
+        return $this->belongsTo(Position::class, 'position_id', 'id');
     }
+
+//    public function position()
+//    {
+//        return $this->hasOne(Position::class, 'id', 'position_id');
+//    }
 
 
 }

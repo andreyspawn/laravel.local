@@ -1264,3 +1264,8 @@ td .fa:before{font-size: 20px !important; margin-left: 10px;}
     margin: 0 auto;
     display: block;
 }
+
+#output_image
+{
+    max-width:200px;
+}

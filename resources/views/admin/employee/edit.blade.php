@@ -3,24 +3,37 @@
 @section('content')
 
 <!-- =============================================== -->
+<!-- photo preview -->
+<script type='text/javascript'>
+    function preview_image(event)
+    {
+        var reader = new FileReader();
+        reader.onload = function()
+        {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" style="min-height: 901px">
     <!-- Content Header (Page header) -->
 
     <!-- Main content -->
     <section class="content">
 
-        {{ Form::open(['route' => 'employee.store','method' => 'post','files' => true]) }}
+        {{ Form::open(['route' => ['employee.update',$id],'method' => 'post','files' => true]) }}
+        {{Form::hidden('id', $id)}}
 
         <div class="col-md-10">
 
             <!-- Default box -->
             <div class="box box-solid box-default">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Карточка нового сотрудника</h3>
+                    <h3 class="box-title">Изменить карточку сотрудника</h3>
                 </div>
-
 
                 <div class="box-body">
 {{--                    @if($errors->any())--}}
@@ -40,28 +53,28 @@
                             <div class="form-group">
                                 <label for="last_name">Фамилия <b class="text-red">*</b></label>
                                 <input type="text" class="form-control" id="lastName"
-                                       name="last_name" placeholder="Иванов">
+                                       name="last_name" value="{{$last_name}}">
                             </div>
 
                             <!-- name -->
                             <div class="form-group">
                                 <label for="name">Имя <b class="text-red">*</b></label>
                                 <input type="text" class="form-control" id="Name"
-                                       name="name" placeholder="Иван">
+                                       name="name" value="{{$name}}">
                             </div>
 
                             <!-- fathers name -->
                             <div class="form-group">
                                 <label for="fathers_name">Отчество <b class="text-red">*</b></label>
                                 <input type="text" class="form-control" id="FathersName"
-                                       name="fathers_name" placeholder="Иванович">
+                                       name="fathers_name" value="{{$fathers_name}}">
                             </div>
 
                             <!-- email -->
                             <div class="form-group">
-                                <label for="fathers_name">Email</label>
-                                <input type="email" class="form-control" id="FathersName" name="email"
-                                       placeholder="email">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       value="{{$email}}">
                             </div>
 
                             <!-- birthday -->
@@ -73,13 +86,22 @@
                                     </div>
                                     <input type="text" data-date-format="dd-mm-yyyy"
                                            class="datepicker form-control pull-right"
-                                           id="datepicker1" name="birthday">
+                                           id="datepicker1" name="birthday"
+                                           value="{{$birthday}}">
                                 </div>
                             </div>
 
+                            {{--                            <div>--}}
+{{--                                <img src="{{$photo}}" alt="" width="70">--}}
+{{--                            </div>--}}
+
                             <div class="form-group">
                                 <label for="exampleInputFile">Фото</label>
-                                <input type="file" id="exampleInputFile" name="photo">
+                                <div>
+                                    <img id="output_image" />
+                                </div>
+                                {{--                                onchange="preview_image(event)"--}}
+                                <input type="file" id="exampleInputFile" name="photo" onchange="preview_image(event)">
                                 <p class="help-block">Фотография сотрудника в формате....</p>
                             </div>
 
@@ -91,7 +113,7 @@
 
                         <div class="form-group">
                             <label>Подразделение</label>
-                            {{Form::select('department_id',$departments,null,['class'=>'form-control select2',
+                            {{Form::select('department_id',$departments,$department_id,['class'=>'form-control select2',
                                     'style'=>'width:100%', 'placeholder' => 'не выбрано'])}}
                             {{--                            <select class="form-control select2" style="width: 100%;">--}}
                             {{--                                <option selected="selected">не выбрано</option>--}}
@@ -103,7 +125,7 @@
 
                         <div class="form-group">
                             <label>Должность</label>
-                            {{Form::select('position_id',$positions,null,['class'=>'form-control select2',
+                            {{Form::select('position_id',$positions,$position_id,['class'=>'form-control select2',
                                     'style'=>'width:100%', 'placeholder' => 'не выбрано'])}}
                             {{--                            <select class="form-control select2" style="width: 100%;">--}}
                             {{--                                <option selected="selected">не выбрано</option>--}}
@@ -131,13 +153,13 @@
                     <div class="col-md-10">
                         <div class="form-group">
                             <label for="note_about">Заметка о сотруднике</label>
-                            <textarea id="note_about" cols="20" rows="5" class="form-control" name="note"></textarea>
+                            <textarea id="note_about" cols="20" rows="5" class="form-control" name="note"> {{$note}}</textarea>
                         </div>
 
                         <!-- checkbox -->
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" name="check_is_visual">
+                                <input type="checkbox" name="is_visual" {{$is_visual}}>
                             </label>
                             <label>
                                 Показывать данные в карточке сотрудника
@@ -164,3 +186,6 @@
 </div>
 <!-- /.content-wrapper -->
 @endsection('content')
+
+
+
