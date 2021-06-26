@@ -25,6 +25,17 @@ mix.styles([
 
 ],'public/css/admin.css')
 
+mix.styles([
+    'resources/assets/front/vendor/bootstrap/css/bootstrap.min.css',
+    'resources/assets/front/vendor/icofont/icofont.min.css',
+    'resources/assets/front/vendor/boxicons/css/boxicons.min.css',
+    'resources/assets/front/vendor/venobox/venobox.css',
+    'resources/assets/front/vendor/owl.carousel/assets/owl.carousel.min.css',
+    'resources/assets/front/vendor/aos/aos.css',
+    'resources/assets/front/css/style.css',
+
+],'public/css/front.css')
+
 mix.scripts([
     'resources/assets/admin/plugins/jQuery/jquery-2.2.3.min.js',
     'resources/assets/admin/bootstrap/js/bootstrap.min.js',
@@ -46,4 +57,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 
 mix.copy('resources/assets/front/fonts','public/fonts');
-mix.copy('resources/assets/front/images','public/images');
+//mix.copy('resources/assets/front/images','public/images');
+
+mix.copy('resources/assets/front/img','public/assets/img');
