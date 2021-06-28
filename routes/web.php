@@ -18,20 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.index');
 //    return view('welcome');
-});
+})->name('home');
 //
 Auth::routes();
 //
 //Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+//Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('admin/tag/delete/{id}','Admin\TagsController@destroy')->name('tag.destroy');
 Route::get('admin/category/delete/{id}','Admin\CategoriesController@destroy')->name('category.destroy');
 Route::get('admin/post/delete/{id}','Admin\PostsController@destroy')->name('post.destroy');
 
 
-//Route::get('admin/employee/delete/{id}','Admin\EmployeesController@delete')->name('employee.delete');
-//Route::get('admin/department/delete/{id}','Admin\DepartmentsController@delete')->name('department.delete');
-//Route::get('admin/position/delete/{id}','Admin\PositionsController@delete')->name('position.delete');
 
 Route::group(['middleware'=>['auth'],'prefix' => 'admin','namespace'=>'Admin'], function() {
     Route::get('/','HomeController@index')->name('admin.index');

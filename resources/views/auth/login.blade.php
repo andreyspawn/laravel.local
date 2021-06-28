@@ -1,6 +1,11 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
+
+@extends('front.layout')
+
+@include('front.header')
 
 @section('content')
+    <main class="py-4">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -70,4 +75,5 @@
         </div>
     </div>
 </div>
+    </main>
 @endsection

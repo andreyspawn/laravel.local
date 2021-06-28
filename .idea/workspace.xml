@@ -26,8 +26,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="temp work 4">
+      <change afterPath="$PROJECT_DIR$/resources/views/front/about.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/features.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/hero.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,6 +235,7 @@
       <workItem from="1624178753658" duration="29783000" />
       <workItem from="1624261808872" duration="1930000" />
       <workItem from="1624347112074" duration="4353000" />
+      <workItem from="1624888863418" duration="6537000" />
     </task>
     <task id="LOCAL-00001" summary="04-05-2021 - начало сбора шаблона и менюшек">
       <created>1620150556596</created>
@@ -385,10 +400,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1619725599020" />
-    <state x="739" y="427" key="NewPhpFileDialog" timestamp="1622203948454">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="554" y="353" key="NewPhpFileDialog" timestamp="1624912252116">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1620754707544" />
+    <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1624912252116" />
     <state x="739" y="427" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622203948454" />
     <state x="277" y="186" key="Vcs.Push.Dialog.v2" timestamp="1624228158645">
       <screen x="0" y="0" width="1280" height="980" />
@@ -402,9 +417,9 @@
     </state>
     <state x="518" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.980@0.0.1280.980" timestamp="1622916102918" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622530253433" />
-    <state x="427" y="29" width="585" height="801" key="find.popup" timestamp="1620761884534">
+    <state x="427" y="29" width="585" height="801" key="find.popup" timestamp="1624913522367">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="427" y="29" width="585" height="801" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1620761884534" />
+    <state x="427" y="29" width="585" height="801" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1624913522367" />
   </component>
 </project>
