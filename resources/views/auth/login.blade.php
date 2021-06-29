@@ -6,6 +6,7 @@
 @section('content')
 
     @include('front.header')
+    <section id="hero">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -75,5 +76,6 @@
         </div>
     </div>
 </div>
+    </section>
 @endsection
 
