@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <a href="{{ route('employee.create') }}" class="btn btn-success">Добавить</a>
                 </div>
-                <table id="example1" class="table-hover table-bordered table-striped">
+                <table id="empTable" class="table-hover table-bordered table-striped">
                     <thead class="table-light">
                     <tr>
                         <th class="col-lg-1">ID сотрудника</th>

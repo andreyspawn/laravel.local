@@ -28,10 +28,23 @@ $(document).ready(function ()
 
     $(".content-wrapper").on("click",".emp",function (event) {
         $.ajax({
-            method: "POST",
+            method: "GET",
             url: "/employee/delete/" + id,
-            data:
-        });
+            data: {
+                "id": id
+            }
+        })
+            .done( function (data, textStatus, jqXHR) {
+                console.log(data);
+                console.log(textStatus);
+                console.log(jqXHR);
+            })
+            .fail (function () {
+                alert(error);
+            })
+            .always( function () {
+                alert("Я отработал идентификатор id " + data);
+            })
     });
 })
 

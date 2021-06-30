@@ -3098,6 +3098,40 @@ $(document).ready(function ()
     });
 
     $(".content-wrapper").on("click",".emp",function (event) {
-        alert()
+        $.ajax({
+            method: "GET",
+            url: "/employee/delete/" + id,
+            data: {
+                "id": id
+            }
+        })
+            .done( function (data, textStatus, jqXHR) {
+                console.log(data);
+                console.log(textStatus);
+                console.log(jqXHR);
+            })
+            .fail (function () {
+                alert(error);
+            })
+            .always( function () {
+                alert("Я отработал идентификатор id " + data);
+            })
     });
 })
+
+
+// function deletePost(id, csrfToken) {
+//     let answer = confirm('Are you sure?');
+//     if (answer === true)
+//         $.ajax({
+//             type: "DELETE",
+//             url: "/admin/posts/" + id,
+//             data: {
+//                 "_token": csrfToken,
+//                 "id": id
+//             }
+//         }).done(
+//             $('#PostsTable tbody').on('click', '.delete', function () {
+//                 $('#PostsTable').DataTable().row($(this).parents('tr') ).remove().draw();
+//             }))
+// }
