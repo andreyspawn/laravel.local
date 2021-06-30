@@ -5,13 +5,17 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Position;
+use Illuminate\Support\Facades\Gate;
 
 class PositionsController extends Controller
 {
     //
     public function index() {
         $positions = Position::all();
-        return view('admin.position.index',['positions'=>$positions]);
+        if (Gate::allows('allow','admin.position.index')) {
+            return view('admin.position.index',['positions'=>$positions]);
+        }
+        return view('admin.forbidden');
     }
 
     public function create() {

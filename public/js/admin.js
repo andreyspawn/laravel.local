@@ -3096,4 +3096,8 @@ $(document).ready(function ()
     $(".fa-remove").mouseleave(function () {
         $(this).css("border","none")
     });
+
+    $(".content-wrapper").on("click",".emp",function (event) {
+        alert()
+    });
 })

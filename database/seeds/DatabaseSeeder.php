@@ -18,7 +18,11 @@ class DatabaseSeeder extends Seeder
             PositionsSeeder::class,
             EmpForDepSeeder::class,
             EmpPosSeeder::class,
-            RolesSeeder::class
+            RolesSeeder::class,
+            UsersSeeder::class,
+            UsersRolesSeeder::class,
+            AclResourcesSeeder::class,
+            AclRolesSeeder::class
         ]);
     }
 }

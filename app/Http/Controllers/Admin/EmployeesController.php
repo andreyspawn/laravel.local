@@ -9,6 +9,7 @@ use App\Position;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class EmployeesController extends Controller
 {
@@ -50,7 +51,12 @@ class EmployeesController extends Controller
 //        die;
         $employees = Employee::all();
         //dd($employees->find(6)->department->getlistLevel());
-        return view('admin.employee.index',['employees'=>$employees]);
+
+        if (Gate::allows('allow','admin.employee.index')) {
+            return view('admin.employee.index',['employees'=>$employees]);
+        }
+        return view('admin.forbidden');
+
     }
 
     public function create() {

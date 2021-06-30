@@ -25,21 +25,37 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="add assets for front">
-      <change afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_29_213158_create_roles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/RolesSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/clients.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/faq.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/pricing.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/team.blade.php" afterDir="false" />
+    <list default="true" id="9ef0da1e-be39-4e8d-877c-4931f068d7e5" name="Default Changelist" comment="authorization 1">
+      <change afterPath="$PROJECT_DIR$/app/Acl_Resources.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/User_Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_29_232827_create_users_roles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_30_191058_create_acl_resources.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_30_194457_create_acl_roles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/AclResourcesSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/AclRolesSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/UsersRolesSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/forbidden.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartmentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmployeesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmployeesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PositionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PositionsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/RolesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RolesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/front.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/front.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/admin/dist/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/admin/dist/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/department/indexList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/department/indexList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/employee/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,22 +204,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/department" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\laravel.local\resources\views\admin" />
+      <recent name="C:\OpenServer\domains\laravel.local\resources\views\admin\department" />
+      <recent name="C:\OpenServer\domains\laravel.local\resources\views\admin\employee" />
+      <recent name="C:\OpenServer\domains\laravel.local\resources\views\admin\position" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OpenServer\domains\laravel.local\app\Http\Controllers\Admin" />
       <recent name="D:\OpenServer\domains\laravel.local\public\css" />
       <recent name="D:\OpenServer\domains\laravel.local\resources\assets\admin" />
       <recent name="D:\OpenServer\domains\laravel.local\resources\assets" />
       <recent name="D:\OpenServer\domains\laravel.local\resources" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\laravel.local\resources\views\admin\department" />
-      <recent name="C:\OpenServer\domains\laravel.local\resources\views\admin\employee" />
-      <recent name="C:\OpenServer\domains\laravel.local\resources\views\admin\position" />
     </key>
   </component>
   <component name="RunManager">
@@ -234,6 +251,7 @@
       <workItem from="1624261808872" duration="1930000" />
       <workItem from="1624347112074" duration="4353000" />
       <workItem from="1624888863418" duration="7286000" />
+      <workItem from="1625068214976" duration="17694000" />
     </task>
     <task id="LOCAL-00001" summary="04-05-2021 - начало сбора шаблона и менюшек">
       <created>1620150556596</created>
@@ -333,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624916167271</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="authorization 1">
+      <created>1625010218971</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1625010218971</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,17 +403,19 @@
     <MESSAGE value="temp 5" />
     <MESSAGE value="crud for EmployeesController.php completed" />
     <MESSAGE value="add front and login/logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="add front and login/logout" />
+    <MESSAGE value="authorization 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="authorization 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1620761808087">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="248" y="255" width="943" height="349" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1440.860@0.0.1440.860" timestamp="1620761808087" />
-    <state x="460" y="259" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1624225788401">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="518" y="227" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1625089279333">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="460" y="259" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.980@0.0.1280.980" timestamp="1624225788401" />
+    <state x="518" y="227" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1625089279333" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622548263891" />
     <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1619725599020">
       <screen x="0" y="0" width="1440" height="860" />
@@ -411,11 +438,11 @@
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1625001021660" />
     <state x="739" y="427" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622203948454" />
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1624916180907">
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1625010227442">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="277" y="186" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1624228158645" />
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1624916180907" />
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1625010227442" />
     <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620895040414" />
     <state x="416" y="197" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622561423238" />
     <state x="518" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622916102918">

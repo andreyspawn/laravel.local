@@ -25,4 +25,29 @@ $(document).ready(function ()
     $(".fa-remove").mouseleave(function () {
         $(this).css("border","none")
     });
+
+    $(".content-wrapper").on("click",".emp",function (event) {
+        $.ajax({
+            method: "POST",
+            url: "/employee/delete/" + id,
+            data:
+        });
+    });
 })
+
+
+// function deletePost(id, csrfToken) {
+//     let answer = confirm('Are you sure?');
+//     if (answer === true)
+//         $.ajax({
+//             type: "DELETE",
+//             url: "/admin/posts/" + id,
+//             data: {
+//                 "_token": csrfToken,
+//                 "id": id
+//             }
+//         }).done(
+//             $('#PostsTable tbody').on('click', '.delete', function () {
+//                 $('#PostsTable').DataTable().row($(this).parents('tr') ).remove().draw();
+//             }))
+// }

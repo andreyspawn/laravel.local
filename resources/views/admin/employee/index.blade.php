@@ -60,7 +60,10 @@
                         <td>{{$employee->department->department_name ?? "Без подразделения"}}
                         </td>
                         <td>{{$employee->date_in}}</td>
-                        <td><a href="{{route('employee.edit',$employee->id)}}" class="fa fa-pencil"></a> <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove"></a></td>
+                        <td>
+                            <a href="{{route('employee.edit',$employee->id)}}" class="fa fa-pencil"></a>
+                            <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove emp"></a>
+                        </td>
                     </tr>
                     @endforeach
 

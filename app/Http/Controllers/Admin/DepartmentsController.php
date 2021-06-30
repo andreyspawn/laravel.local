@@ -7,15 +7,22 @@ use App\Http\Controllers\Controller;
 use App\Position;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class DepartmentsController extends Controller
 {
 
     public function index()
     {
+
+
         $children = Department::whereNull('parent_id')->with('childrenDepartments')->get();
         //return view('admin.department.indexTable',['children'=>$children,'maxLevel'=>$maxLevel,'root'=>$root]);
-        return view('admin.department.indexList',['children'=>$children]);
+        if (Gate::allows('allow','admin.department.indexList')) {
+            return view('admin.department.indexList',['children'=>$children]);
+        }
+        return view('admin.forbidden');
+
     }
 
     public function delete($id)

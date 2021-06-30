@@ -11,7 +11,10 @@
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <a href="{{ route('department.create') }}" class="btn btn-success">Добавить</a>
+                        @if (Auth::user()->roles()->first()->title === 'guest')
+                            <?php $disable = 'disabled'; ?>
+                        @endif
+                        <a href="{{ route('department.create') }}" class="btn btn-success {{$disable}}">Добавить</a>
                     </div>
 {{--dd($children)--}}
                     @foreach ($children as $child)
