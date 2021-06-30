@@ -29,7 +29,7 @@ $(document).ready(function ()
     $(".content-wrapper").on("click",".emp",function (event) {
         $.ajax({
             method: "GET",
-            url: "/employee/delete/" + id,
+            url: "/employee/ajaxdelete/" + id,
             data: {
                 "id": id
             }

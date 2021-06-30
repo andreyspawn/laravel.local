@@ -147,4 +147,8 @@ class EmployeesController extends Controller
         Employee::find($id)->delete();
         return redirect()->route('employee.index');
     }
+
+    public function ajaxDelete($id) {
+        Employee::find($id)->delete();
+    }
 }

@@ -36,6 +36,7 @@ Route::group(['middleware'=>['auth'],'prefix' => 'admin','namespace'=>'Admin'], 
     Route::get('/','HomeController@index')->name('admin.index');
 
     Route::get('/employee/delete/{id}','EmployeesController@delete')->name('employee.delete');
+    Route::get('/employee/ajaxdelete/{id}','EmployeesController@ajaxDelete')->name('employee.ajaxdelete');
     Route::get('/employee/edit/{id}','EmployeesController@edit')->name('employee.edit');
     Route::post('employee/edit/{id}','EmployeesController@update')->name('employee.update');
     Route::get('/department/delete/{id}','DepartmentsController@delete')->name('department.delete');
