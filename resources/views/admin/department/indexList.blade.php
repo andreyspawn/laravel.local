@@ -23,10 +23,10 @@
                             <li class="list-group-item">
 
                                 <a href="#{{$child->id}}"> {{ $child->department_name }}
-                                    ({{@$child->chief->position->position_name}}: {{@$child->chief->last_name}} {{@$child->chief->name}}) </a>
+                                    ({{$child->chief->position->position_name ?? "undefined"}}: {{$child->chief->last_name ?? "undefined"}} {{$child->chief->name ?? "undefined"}}) </a>
 
-                                <a href="edit.html" class="fa fa-pencil"></a>
-                                <a href="{{route('department.delete',$child->id)}}" class="fa fa-remove"></a>
+                                <a href="edit.html" class="{{$disable}} fa fa-pencil" ></a>
+                                <a href="{{route('department.delete',$child->id)}}" class="{{$disable}} fa fa-remove" ></a>
 
 
                             </li>

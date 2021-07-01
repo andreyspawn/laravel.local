@@ -40,7 +40,9 @@ class DepartmentsController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        $fields = $request->all();
+        //dd($fields);
+        Department::add($fields);
 
         return redirect()->route('department.index');
     }

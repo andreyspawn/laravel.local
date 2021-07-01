@@ -17,9 +17,9 @@
                 <div class="box-body">
                     <div class="form-group col-md-6">
                         <label class="col-form-label">Подразделение хозяин</label>
-                        <div class="input-group">
+                        <div class="input-group"  title="Введите оклад">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-                            {{Form::select('parent_id',$departments,null,['class'=>'form-control select2',
+                            {{Form::select('department_id',$departments,null,['class'=>'form-control select2',
                                     'style'=>'width:100%', 'placeholder' => 'не выбрано'])}}
                         </div>
 

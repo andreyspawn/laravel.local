@@ -63,7 +63,7 @@
                         <td>
                             <a href="{{route('employee.edit',$employee->id)}}" class="fa fa-pencil"></a>
 {{--                            <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove emp"></a>--}}
-                            <a href="#" id="{{$employee->id}}" onclick="deletePost({{$employee->id}});" class="fa fa-remove emp"></a>
+                            <a href="#!" id="{{$employee->id}}" onclick="deletePost({{$employee->id}});" class="fa fa-remove emp"></a>
 {{--                            <a href="{{route('employee.ajaxdelete',$employee->id)}}" class="fa fa-remove emp"></a>--}}
                         </td>
                     </tr>

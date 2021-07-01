@@ -10,6 +10,21 @@ class Department extends Model
 {
     private $listLevel;
 
+    protected $fillable = [
+        'parent_id',
+        'department_name',
+        'position_id'
+    ];
+
+    public static function add($fields) {
+        $department = new Department();
+        $department->fill($fields);
+        $department->save();
+        //dd($department);
+        return $department;
+
+    }
+
     //return all object of class for that level
     public function departments() {
        return $this->hasMany(Department::class,'parent_id');
