@@ -20,7 +20,7 @@
 {{--    </section>--}}
 
     <!-- Main content -->
-    <section class="content">
+ <section class="content">
 
         <!-- Default box -->
         <div class="box box-solid box-default"">
@@ -44,7 +44,7 @@
                         <th class="col-lg-1">Действия</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="empTable1">
 
                     @foreach($employees as $employee)
                     <tr>
@@ -62,23 +62,57 @@
                         <td>{{$employee->date_in}}</td>
                         <td>
                             <a href="{{route('employee.edit',$employee->id)}}" class="fa fa-pencil"></a>
-                            <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove emp"></a>
+{{--                            <a href="{{route('employee.delete',$employee->id)}}" class="fa fa-remove emp"></a>--}}
+                            <a href="#" id="{{$employee->id}}" onclick="deletePost({{$employee->id}});" class="fa fa-remove emp"></a>
+{{--                            <a href="{{route('employee.ajaxdelete',$employee->id)}}" class="fa fa-remove emp"></a>--}}
                         </td>
                     </tr>
                     @endforeach
-
+                    <tfoot>
                     </tfoot>
                 </table>
             </div>
             <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
 
+        <!-- /.box -->
     </section>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
 @endsection('content')
+
+<script type="text/javascript">
+    function deletePost(id) {
+        $.ajax({
+            method: "GET",
+            url: "/admin/employee/ajaxdelete/" + id,
+            data: {
+                 "id": id
+             }
+        })
+            .done( function (data,textStatus,jqXHR){
+                    console.log(data);
+                    console.log(textStatus);
+                    console.log(jqXHR);
+                },
+               // $('#empTable1 tbody').on('click', '.emp', function () {
+                //  $('#empTable1').DataTable().row($(this).parents('tr') ).remove().draw();
+          //          alert("Wont delete" + id);
+          //          }
+                $('#empTable').on('click','.emp',function() {
+                    $('#empTable').DataTable().row($(this).parents('tr')).remove().draw()
+                    //alert("Wont delete" + id)
+                })
+
+                )
+                    .fail (function () {
+                        alert('Error!!!')
+                    })
+                    // .always( function () {
+                    //     alert("Я отработал идентификатор id " + id)
+                    // })
+            }
+</script>
 
 

@@ -11,6 +11,7 @@
                 </div>
                 <div class="box-body">
                     <div class="form-group">
+                        <?php $disable = ''; ?>
                         @if (Auth::user()->roles()->first()->title === 'guest')
                             <?php $disable = 'disabled'; ?>
                         @endif

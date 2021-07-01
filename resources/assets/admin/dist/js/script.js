@@ -1,5 +1,6 @@
 $(document).ready(function ()
 {
+    $("#empTable").DataTable();
     $("#example1").DataTable();
 
     //Initialize Select2 Elements
@@ -26,26 +27,30 @@ $(document).ready(function ()
         $(this).css("border","none")
     });
 
-    $(".content-wrapper").on("click",".emp",function (event) {
+    function deletePost111(id) {
         $.ajax({
             method: "GET",
-            url: "/employee/ajaxdelete/" + id,
+            url: "/employee/ajaxdelete/" + this.id,
             data: {
-                "id": id
+                "id": this.id
             }
         })
-            .done( function (data, textStatus, jqXHR) {
+            .done(function (data, textStatus, jqXHR) {
                 console.log(data);
                 console.log(textStatus);
                 console.log(jqXHR);
-            })
-            .fail (function () {
-                alert(error);
-            })
-            .always( function () {
-                alert("Я отработал идентификатор id " + data);
-            })
-    });
+                $('#empTable1 tbody').on('click', '.delete', function () {
+//                 $('#empTable1').DataTable().row($(this).parents('tr') ).remove().draw();
+
+                })
+                    .fail(function () {
+                        alert(error);
+                    })
+                    .always(function () {
+                        alert("Я отработал идентификатор id " + this.id);
+                    })
+            });
+    }
 })
 
 
