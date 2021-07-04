@@ -41,6 +41,7 @@ Route::group(['middleware'=>['auth'],'prefix' => 'admin','namespace'=>'Admin'], 
     Route::post('employee/edit/{id}','EmployeesController@update')->name('employee.update');
     Route::get('/department/delete/{id}','DepartmentsController@delete')->name('department.delete');
     Route::get('/position/delete/{id}','PositionsController@delete')->name('position.delete');
+    Route::get('/position/ajaxdelete/{id}','PositionsController@ajaxDelete')->name('position.ajaxdelete');
 
     Route::resource('category','CategoriesController',['only'=> ['index','create','store']]);
     Route::resource('tag','TagsController',['only'=> ['index','create','store']]);

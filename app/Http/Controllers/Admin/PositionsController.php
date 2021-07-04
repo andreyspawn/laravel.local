@@ -36,5 +36,9 @@ class PositionsController extends Controller
         return redirect()->route('position.index');
     }
 
+    public function  ajaxdelete($id) {
+        Position::find($id)->delete();
+    }
+
 
 }

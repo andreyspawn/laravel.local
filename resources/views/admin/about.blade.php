@@ -7,8 +7,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Привет! Это админка
-                <small>приятные слова..</small>
+                Административная часть
+                <small>Будущая нструкция, заметки по ТЗ, нюансы задачи...</small>
             </h1>
         </section>
 
@@ -18,15 +18,14 @@
             <!-- Default box -->
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Инструкция, заметки по ТЗ, нюансы задачи</h3>
+                    <h3 class="box-title">Предварительно</h3>
                 </div>
                 <div class="box-body">
-                    1. Три таблицы - сотрудники, подразделения, должности
+                    Три таблицы - сотрудники, подразделения, должности
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                   'футер - потом решим для чего'
-                    CHECK IN!!!!
+
                 </div>
                 <!-- /.box-footer-->
             </div>

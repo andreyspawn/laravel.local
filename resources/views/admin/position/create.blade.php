@@ -32,7 +32,8 @@
 
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button class="btn btn-default" onclick="history.back();">Назад</button>
+{{--                    <button class="btn btn-default" onclick="history.back();">Назад</button>--}}
+                    <a href="{{route('position.index')}}" class="btn btn-info">Назад</a>
                     <button class="btn btn-success pull-right" type="submit">Добавить</button>
                 </div>
                 <!-- /.box-footer-->

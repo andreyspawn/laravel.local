@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <a href="{{ route('position.create') }}" class="btn btn-success">Добавить</a>
                 </div>
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="posTable" class="table table-bordered table-hover">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -49,7 +49,8 @@
                         <td class="col-lg-1">{{$position->salary}}</td>
                         <td class="col-lg-1">
                             <a href="edit.html" class="fa fa-pencil"></a>
-                            <a href="{{route('position.delete',$position->id)}}" class="fa fa-remove"></a>
+{{--                            <a href="{{route('position.delete',$position->id)}}" class="fa fa-remove"></a>--}}
+                            <a href="#!" id="{{$position->id}}" onclick="deletePost({{$position->id}});" class="fa fa-remove pos"></a>
                         </td>
                     </tr>
                     @endforeach
@@ -67,4 +68,35 @@
 
 @endsection('content')
 
+<script type="text/javascript">
+    function deletePost(id) {
+        $.ajax({
+            method: "GET",
+            url: "/admin/position/ajaxdelete/" + id,
+            data: {
+                "id": id
+            }
+        })
+            .done( function (data,textStatus,jqXHR){
+                    console.log(data);
+                    console.log(textStatus);
+                    console.log(jqXHR);
+                },
+                // $('#empTable1 tbody').on('click', '.emp', function () {
+                //  $('#empTable1').DataTable().row($(this).parents('tr') ).remove().draw();
+                //          alert("Wont delete" + id);
+                //          }
+                $('#posTable').on('click','.pos',function() {
+                    $('#posTable').DataTable().row($(this).parents('tr')).remove().draw()
+                    //alert("Wont delete" + id)
+                })
 
+            )
+            .fail (function () {
+                alert('Error!!!')
+            })
+        // .always( function () {
+        //     alert("Я отработал идентификатор id " + id)
+        // })
+    }
+</script>
